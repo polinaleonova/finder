@@ -1,0 +1,14 @@
+<div ng-controller="OnePlayerController">
+    game filed for one player
+    <div>Очки:{{score}}</div>
+    <!--<div class='scores_style' ng-repeat="apple in apples track by $index"><img src="/static/img/apple.png"></div>-->
+    <div class="field">
+        <div ng-repeat="i in game_field track by $index">
+            <div  class="field_cell"
+                  id='id_{{$index}}'
+                  ng-click=" clickHandler($index) " >
+                <div ng-if="indexInShowList($index)"></div>
+            </div>
+        </div>
+    </div>
+</div>

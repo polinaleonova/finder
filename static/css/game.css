@@ -1,0 +1,87 @@
+html,
+body {
+    height: 2000px;
+    margin: 0;
+    padding: 0;
+    color: white;
+    background-color: #B7DC82;
+}
+
+.wrapper{
+    width: 400px;
+    position: fixed;
+}
+.field {
+    /*position: fixed;*/
+    margin: auto;
+    margin-top: 100px;
+    height: 400px;
+    width: 400px;
+    border: 2px solid #002a80;
+}
+.field_cell {
+    height: 96px;
+    width: 96px;
+    background-color: #ffff00;
+    border: 2px solid #002a80;
+    border-radius: 4px;
+    color: lightseagreen ;
+    position: relative;
+    float: left;
+}
+.disable_cell{
+    background-color: darkorange;
+}
+.disable{
+    background-color: darkturquoise;
+}
+.col{
+    background-color: #008000;
+}
+.open{
+    background-color: salmon;
+}
+.scores_style{
+    float: left;
+}
+img{
+    height: 50px;
+}
+.popup_wrapper{
+    height: 100%;
+    width: 100%;
+
+}
+.popup_result{
+    height: 100px;
+    width: 200px;
+
+}
+.popup_wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.popup_wrapper.visible_wrap {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup_result {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+.popup_result p{
+    color: #000000;
+}

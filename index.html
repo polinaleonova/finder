@@ -1,0 +1,122 @@
+<!doctype html>
+	<html ng-app="Game">
+<head>
+    <base>
+	<meta charset="utf-8">
+
+	<!-- opengraph tags for future-->
+	<!--<meta property="og:site_name" content="FINDER">-->
+    <!--<meta property="og:image" content="path/to/image">-->
+	<!--<meta property="og:type" content="webgame">-->
+	<!--<meta property="og:title" content="finder">-->
+	<!--<meta property="og:description" content="Webgame for the little ones">-->
+    <link rel="stylesheet" href="static/css/game.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="static/js/app/app.js"></script>
+    <script src="static/js/app/controllers.js"></script>
+    <!--<script src="/static/js/app/directives.js"></script>-->
+    <!--<script src="/static/js/app/services.js"></script>-->
+    <script type="text/javascript">
+        document.getElementsByTagName('base')[0].href = document.location.pathname //for github pages
+    </script>
+	<title>
+		FinderGame
+	</title>
+</head>
+
+<script>
+    function doubling_and_shuffle_elements(list_elements, count_cells) {
+        /**
+         * @param {Array} list_elements - array  with some elements any types;
+         * @param count_cells - count of elements in square matrix of even order(game field);
+         * @return {Array} doubling_array - array with length = count_cells, includes
+         * duplicated and shuffled elements from list_elements;
+         * Example: doubling_and_shuffle_elements([1,2,3,4,5,6,7,8,9],4)
+         *          return [1,2,2,1]
+         */
+        var doubling_array = [],
+            cut_list_elements = list_elements.slice(0,(count_cells/2)); //get list half requirenment length
+        for (var i = 0; i < cut_list_elements.length; i++){
+            doubling_array.push(cut_list_elements[i], cut_list_elements[i])
+        }
+        var tmp, current, top = doubling_array.length;
+
+        if(top) while(--top) {
+            current = Math.floor(Math.random() * (top + 1));
+            tmp = doubling_array[current];
+            doubling_array[current] = doubling_array[top];
+            doubling_array[top] = tmp;
+        }
+        return doubling_array;
+    }
+</script>
+<body>
+    <div ng-controller="StepController">
+        <div ng-switch="steps">
+            <div ng-switch-default="step_1">
+                Колличество игроков:
+                <button ng-click="step_1('one')">
+                 One Player
+                </button>
+                <!--<button ng-click="step_1('two')">-->
+                 <!--Two Players-->
+                <!--</button>-->
+            </div>
+            <div ng-switch-when="step_2">
+                Сложность:
+                <button ng-click="step_2(2)">
+                  super easy
+                </button>
+                <button ng-click="step_2(4)">
+                  easy
+                </button>
+                <!--<button ng-click="step_2('6')">-->
+                  <!--middle-->
+                <!--</button>-->
+                <!--<button ng-click="step_2('4')">-->
+                  <!--4-->
+                <!--</button>-->
+            </div>
+            <div ng-switch-when="step_3">
+                Элементы
+                <button ng-click="step_3('color')">
+                  Цвета
+                </button>
+                <button ng-click="step_3('digit')">
+                  Цифры
+                </button>
+                <!--<button ng-click="step_3('letter')">-->
+                  <!--Буквы-->
+                <!--</button>-->
+                <!--<button ng-click="step_3('word')">-->
+                  <!--Слова-->
+                <!--</button>-->
+            </div>
+            <button ng-switch-when="step_4" ng-click="startgame(players,level,element)">
+                Start
+            </button>
+            <div ng-switch-when="step_5"></div>
+            <div ng-view></div>
+            <div class="popup_wrapper" ng-class="{visible_wrap: win}">
+                <div class="popup_result">
+                    <p>Congratulations!<br>
+                        You are win
+                    </p>
+                    <a class="button" ng-click="steps = 'step_1'; win = false; fail = false" href="/">Restart game</a>
+                    <!--<a class="button" href="/">End game</a>-->
+                </div>
+            </div>
+            <div class="popup_wrapper"  ng-class="{visible_wrap: fail}">
+                <div class="popup_result">
+                    <p>:((((((<br>
+                        You are loser
+                    </p>
+                    <a class="button" ng-click="steps = 'step_1'; win = false; fail = false" href="/">Restart game</a>
+                    <!--<a class="button" href="/">End game</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

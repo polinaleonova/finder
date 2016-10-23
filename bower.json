@@ -1,0 +1,22 @@
+{
+  "name": "finder",
+  "authors": [
+    "Polina Leonova <polina.ostapenko.88@gmail.com>"
+  ],
+  "description": "Simple web game on AngularJS",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/polinaleonova/finder",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "angular": "1.5.2",
+    "angular-route": "1.5.2"
+  }
+}
