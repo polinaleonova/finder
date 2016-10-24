@@ -2,7 +2,7 @@
 
 var finderControllers = angular.module('finderControllers',[]);
 finderControllers.controller('StepController', ['$scope','$location','$http','$rootScope', function($scope, $location, $http, $rootScope){
-    $scope.base_href = document.location.pathname //for github pages
+    $scope.base_href = document.location.pathname; //for github pages
     $scope.step_1 = function(p){
         $scope.players = p;
         $scope.steps = 'step_2'
@@ -29,11 +29,13 @@ finderControllers.controller('StepController', ['$scope','$location','$http','$r
             $rootScope.score   = data.levels[$scope.level][1]
         })
     };
-
+    $scope.set_to_start = function(){
+       $scope.steps = 'step_1';
+       $rootScope.win = false;
+       $rootScope.fail = false
+    }
     }]);
 finderControllers.controller('OnePlayerController', ['$scope','$rootScope','$timeout',function($scope,$rootScope,$timeout) {
-//        $scope.game_field = [1,2,2,1];
-//        $scope.score = 2;
         $rootScope.win = false;
         $rootScope.fail = false;
         $scope.cell_opened = false;
