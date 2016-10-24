@@ -18,9 +18,7 @@
     <script src="static/js/app/controllers.js"></script>
     <!--<script src="/static/js/app/directives.js"></script>-->
     <!--<script src="/static/js/app/services.js"></script>-->
-    <script type="text/javascript">
-        document.getElementsByTagName('base')[0].href = document.location.pathname //for github pages
-    </script>
+
 	<title>
 		FinderGame
 	</title>
@@ -104,7 +102,7 @@
                     <p>Congratulations!<br>
                         You are win
                     </p>
-                    <a class="button" ng-click="steps = 'step_1'; win = false; fail = false" href="/">Restart game</a>
+                    <a class="button" ng-click="steps = 'step_1'; win = false; fail = false" ng-href = "{{base_href}}">Restart game</a>
                     <!--<a class="button" href="/">End game</a>-->
                 </div>
             </div>
@@ -113,10 +111,14 @@
                     <p>:((((((<br>
                         You are loser
                     </p>
-                    <a class="button" ng-click="steps = 'step_1'; win = false; fail = false" href="/">Restart game</a>
+                    <a class="button" ng-click="steps = 'step_1'; win = false; fail = false" ng-href = "{{base_href}}">Restart game</a>
                     <!--<a class="button" href="/">End game</a>-->
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+         //for github pages
+        document.getElementsByTagName('base')[0].href = document.location.pathname
+    </script>
 </body>
