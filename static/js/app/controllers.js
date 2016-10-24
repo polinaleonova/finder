@@ -2,6 +2,7 @@
 
 var finderControllers = angular.module('finderControllers',[]);
 finderControllers.controller('StepController', ['$scope','$location','$http','$rootScope', function($scope, $location, $http, $rootScope){
+    $scope.base_href = document.location.pathname //for github pages
     $scope.step_1 = function(p){
         $scope.players = p;
         $scope.steps = 'step_2'
