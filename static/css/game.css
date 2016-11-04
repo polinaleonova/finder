@@ -1,12 +1,21 @@
 html,
 body {
-    height: 2000px;
     margin: 0;
     padding: 0;
     color: white;
     background-color: #B7DC82;
-}
 
+}
+.font-game{
+    color: #1CB3CD;
+    font-family: 'Flavors', cursive;
+    font-size: 68px;
+}
+button{
+    color: #1CB3CD;
+    font-family: 'Flavors', cursive;
+    font-size: 48px;
+}
 .wrapper{
     width: 400px;
     position: fixed;
@@ -84,4 +93,35 @@ img{
 }
 .popup_result p{
     color: #000000;
+}
+
+#container_layer{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+#container_layer img{
+    height: 800px;
+    width: 1100px;
+    position: absolute;
+    /*left: -100px;*/
+    /*top: -100px;*/
+}
+.container_selectors{
+    width: 100%;
+     z-index: 100;
+     position: absolute;
+}
+.select_game_block{
+    z-index: 3;
+    position: relative;
+    width: 800px;
+    /*height: 500px;*/
+    top:200px;
+    margin: auto;
+}
+.bt{
+    background-color: #BBDBE2;
+    border: none;
 }

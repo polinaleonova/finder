@@ -33,6 +33,18 @@ finderControllers.controller('StepController', ['$scope','$location','$http','$r
        $scope.steps = 'step_1';
        $rootScope.win = false;
        $rootScope.fail = false
+    };
+    var tempX = 0;
+    var tempY = 0;
+    $scope.change_x = function(e){
+        tempX = e.pageX;
+        tempY = e.pageY;
+        document.getElementById('layer1').style.left =tempX*(-0.1)+'px';
+        document.getElementById('layer1').style.top =tempY*(-0.1)+'px';
+        document.getElementById('layer2').style.left =tempX*(-0.2)+'px';
+        document.getElementById('layer2').style.top =tempY*(-0.2)+'px';
+        document.getElementById('layer3').style.left =tempX*(-0.4)+'px';
+        document.getElementById('layer3').style.top =tempY*(-0.4)+'px';
     }
     }]);
 finderControllers.controller('OnePlayerController', ['$scope','$rootScope','$timeout',function($scope,$rootScope,$timeout) {
