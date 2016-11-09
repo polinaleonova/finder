@@ -1,0 +1,59 @@
+/* line 11, ../sass/base.scss */
+body {
+  background-image: url("/static/img/65a64d7f3c7ad6224dc349849c71f26d.png");
+}
+
+/* line 14, ../sass/base.scss */
+.base_container {
+  width: 1000px;
+  margin: auto;
+}
+
+/* line 18, ../sass/base.scss */
+.font-game {
+  color: #1CB3CD;
+  font: 60px "Flavors", cursive;
+  -moz-border-radius: 4px / 4px;
+  -webkit-border-radius: 4px 4px;
+  border-radius: 4px / 4px;
+  text-align: center;
+}
+
+/* line 24, ../sass/base.scss */
+.button-constant, .bt, .bt:hover {
+  font: 52px "Flavors", cursive;
+  width: 200px;
+  min-height: 70px;
+  border: none;
+  float: left;
+}
+
+/* line 31, ../sass/base.scss */
+.bt {
+  color: #1CB3CD;
+  background-color: #ffffff;
+}
+
+/* line 36, ../sass/base.scss */
+.bt:hover {
+  color: #ffffff;
+  background-color: #1CB3CD;
+}
+
+/* line 41, ../sass/base.scss */
+.container_selectors {
+  width: 400px;
+  position: relative;
+  top: 200px;
+  z-index: 2;
+  margin: auto;
+  opacity: 0.4;
+  background-color: azure;
+}
+
+/* line 50, ../sass/base.scss */
+#container_layer {
+  position: absolute;
+  top: 100px;
+  width: inherit;
+}

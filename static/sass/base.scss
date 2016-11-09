@@ -1,0 +1,54 @@
+//@import "compass/css3";
+@import "compass";
+
+$font-base-family: 'Flavors', cursive;
+$color-font-base: #1CB3CD;
+$base-background:url("/static/img/65a64d7f3c7ad6224dc349849c71f26d.png");
+@mixin font-base($size) {
+  font: $size $font-base-family;
+}
+
+body{
+  background-image: $base-background;
+}
+.base_container{
+  width: 1000px;
+  margin: auto;
+}
+.font-game{
+    color: $color-font-base;
+    @include font-base(60px);
+    @include border-radius(4px, 4px);
+  text-align: center;
+}
+.button-constant{
+  @include font-base(52px);
+  width: 200px;
+  min-height: 70px;
+  border: none;
+  float:left;
+}
+.bt{
+  @extend .button-constant;
+  color: $color-font-base;
+  background-color: #ffffff;
+}
+.bt:hover{
+  @extend .button-constant;
+  color: #ffffff;
+  background-color: $color-font-base;
+}
+.container_selectors{
+   width: 400px;
+    position: relative;
+    top: 200px;
+    z-index: 2;
+    margin: auto;
+    opacity: 0.4;
+    background-color: azure;
+}
+#container_layer{
+  position: absolute;
+  top: 100px;
+  width: inherit;
+}

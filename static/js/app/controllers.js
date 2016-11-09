@@ -60,7 +60,7 @@ finderControllers.controller('OnePlayerController', ['$scope','$rootScope','$tim
             if (!current_element.hasClass('open') && !current_element.hasClass('col')) {
                 $scope.show_list.push(index);
                 current_element.addClass('col');
-                document.getElementById('id_' + index).innerHTML = $rootScope.game_field[index];
+                document.getElementById('id_' + index).innerHTML = '<img class="img_cell" src="'+$rootScope.game_field[index]+'">';
 //                $timeout(function () {
                     var showed_elements = angular.element(document.getElementsByClassName('col'));
                     var count_showed_cells = showed_elements.length;

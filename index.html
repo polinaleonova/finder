@@ -11,7 +11,7 @@
 	<!--<meta property="og:title" content="finder">-->
 	<!--<meta property="og:description" content="Webgame for the little ones">-->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Annie+Use+Your+Telescope|Cabin+Sketch|Flavors|Fontdiner+Swanky|Kranky|Ruge+Boogie" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/game.css">
+    <link rel="stylesheet" href="static/css/base.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
@@ -29,7 +29,7 @@
     function doubling_and_shuffle_elements(list_elements, count_cells) {
         /**
          * @param {Array} list_elements - array  with some elements any types;
-         * @param count_cells - count of elements in square matrix of even order(game field);
+         * @param {Number} count_cells - count of elements in square matrix of even order(game field);
          * @return {Array} doubling_array - array with length = count_cells, includes
          * duplicated and shuffled elements from list_elements;
          * Example: doubling_and_shuffle_elements([1,2,3,4,5,6,7,8,9],4)
@@ -52,79 +52,86 @@
     }
 </script>
 <body>
-    <div ng-controller="StepController">
-        <div class="container_selectors" ng-switch="steps">
-            <div class="select_game_block" ng-switch-default="step_1">
-                <p class="font-game">Players:</p>
-                <button class="bt" ng-click="step_1('one')">
-                 One Player
-                </button>
-                <!--<button class="bt" ng-click="step_1('two')">-->
-                 <!--Two Players-->
-                <!--</button>-->
-            </div>
-            <div class="select_game_block" ng-switch-when="step_2">
-                Сложность:
-                <button class="bt" ng-click="step_2(2)">
-                  super easy
-                </button>
-                <button class="bt" ng-click="step_2(4)">
-                  easy
-                </button>
-                <!--<button class="bt" ng-click="step_2('6')">-->
-                  <!--middle-->
-                <!--</button>-->
-                <!--<button class="bt" ng-click="step_2('4')">-->
-                  <!--4-->
-                <!--</button>-->
-            </div>
-            <div class="select_game_block" ng-switch-when="step_3">
-                Элементы
-                <button class="bt" ng-click="step_3('color')">
-                  Цвета
-                </button>
-                <button class="bt" ng-click="step_3('digit')">
-                  Цифры
-                </button>
-                <!--<button class="bt" ng-click="step_3('letter')">-->
-                  <!--Буквы-->
-                <!--</button>-->
-                <!--<button class="bt" ng-click="step_3('word')">-->
-                  <!--Слова-->
-                <!--</button>-->
-            </div>
-            <div class="select_game_block" ng-switch-when="step_4">
-                <button class="bt" ng-click="startgame(players,level,element)">Start</button>
-            </div>
-            <div ng-switch-when="step_5"></div>
-            <div ng-view></div>
+    <div ng-controller="StepController" class="base_container">
+        <!--<div class="wraper">-->
 
-            <div class="popup_wrapper" ng-class="{visible_wrap: win}">
-                <div class="popup_result">
-                    <p>Congratulations!<br>
-                        You are win
-                    </p>
-                    <a class="button" ng-click="set_to_start()" ng-href = "{{base_href}}">Restart game</a>
-                    <!--<a class="button" href="/">End game</a>-->
+            <div class="container_selectors" ng-switch="steps">
+                <div class="select_game_block" ng-switch-default="step_1">
+                    <p class="font-game">Players</p>
+                    <button class="bt" ng-click="step_1('one')">
+                     One
+                    </button>
+                    <button class="bt" ng-click="step_1('two')">
+                     Two
+                    </button>
                 </div>
-            </div>
-            <div class="popup_wrapper"  ng-class="{visible_wrap: fail}">
-                <div class="popup_result">
-                    <p>:((((((<br>
-                        You are loser
-                    </p>
-                    <a class="button" ng-click="set_to_start()" ng-href = "{{base_href}}">Restart game</a>
-                    <!--<a class="button" href="/">End game</a>-->
+                <div class="select_game_block" ng-switch-when="step_2">
+                    <p class="font-game">Difficulty Level</p>
+                    <button class="bt" ng-click="step_2(2)">
+                      super easy
+                    </button>
+                    <button class="bt" ng-click="step_2(4)">
+                      easy
+                    </button>
+                    <button class="bt" ng-click="step_2('6')">
+                      middle
+                    </button>
+                    <button class="bt" ng-click="step_2('8')">
+                      hard
+                    </button>
+                    <button class="bt" ng-click="step_2('8')">
+                      super hard
+                    </button>
                 </div>
-            </div>
+                <div class="select_game_block" ng-switch-when="step_3">
+                    <p class="font-game">What will you look for?</p>
+                    <!--<custom-direct></custom-direct>-->
+                    <!--<button class="bt" ng-click="step_3('color')">-->
+                      <!--Treasure-->
+                    <!--</button>-->
+                    <!--<button class="bt" ng-click="step_3('digit')">-->
+                      <!--Numbers-->
+                    <!--</button>-->
+                    <!--<button class="bt" ng-click="step_3('socks')">-->
+                      <!--Socks-->
+                    <!--</button>-->
+                    <!--<button class="bt" ng-click="step_3('word')">-->
+                      <!--Слова-->
+                    <!--</button>-->
+                </div>
+                <div class="select_game_block" ng-switch-when="step_4">
+                    <button class="bt" ng-click="startgame(players,level,element)">Start >>>-----></button>
+                </div>
+                <div ng-switch-when="step_5"></div>
+                <div ng-view></div>
 
+                <div class="popup_wrapper" ng-class="{visible_wrap: win}">
+                    <div class="popup_result">
+                        <p>Congratulations!<br>
+                            You are win
+                        </p>
+                        <a class="button" ng-click="set_to_start()" ng-href = "{{base_href}}">Restart game</a>
+                        <!--<a class="button" href="/">End game</a>-->
+                    </div>
+                </div>
+                <div class="popup_wrapper"  ng-class="{visible_wrap: fail}">
+                    <div class="popup_result">
+                        <p>:((((((<br>
+                            You are loser
+                        </p>
+                        <a class="button" ng-click="set_to_start()" ng-href = "{{base_href}}">Restart game</a>
+                        <!--<a class="button" href="/">End game</a>-->
+                    </div>
+                </div>
+
+            </div>
+                <div id="container_layer" ng-mousemove="change_x($event)">
+                <img src="static/img/art-back.gif" id="layer1" style="opacity: 1;z-index: 0" >
+                <img src="static/img/art-tree.gif" id="layer2" style="opacity: 1;z-index: 2">
+                <img src="static/img/art-boat.gif" id="layer3" style="opacity: 1;z-index: 3">
+                </div>
         </div>
-        <div id="container_layer" ng-mousemove="change_x($event)">
-            <img src="static/img/art-back.gif" id="layer1" style="opacity: 1;z-index: 0" >
-            <img src="static/img/art-tree.gif" id="layer2" style="opacity: 1;z-index: 2">
-            <img src="static/img/art-boat.gif" id="layer3" style="opacity: 1;z-index: 3">
-        </div>
-    </div>
+    <!--</div>-->
 
     <script type="text/javascript">
          //for github pages
