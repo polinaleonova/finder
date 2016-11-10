@@ -1,6 +1,6 @@
 'use strict';
 
-var Game = angular.module('Game', ['ngRoute','finderControllers']);
+var Game = angular.module('Game', ['ngRoute','finderControllers','finderDirectives']);
 
     Game.config(function($routeProvider, $locationProvider) {
         $routeProvider.when('/startgame/one/:level/:element/',

@@ -42,7 +42,7 @@ body{
    width: 400px;
     position: relative;
     top: 200px;
-    z-index: 2;
+    z-index: 4;
     margin: auto;
     opacity: 0.4;
     background-color: azure;
@@ -50,5 +50,10 @@ body{
 #container_layer{
   position: absolute;
   top: 100px;
-  width: inherit;
+  overflow: hidden;
+  width: 1000px;
+  height: 800px;
+}
+img{
+  position: absolute;
 }

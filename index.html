@@ -11,13 +11,13 @@
 	<!--<meta property="og:title" content="finder">-->
 	<!--<meta property="og:description" content="Webgame for the little ones">-->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Annie+Use+Your+Telescope|Cabin+Sketch|Flavors|Fontdiner+Swanky|Kranky|Ruge+Boogie" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="static/css/game.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
     <script src="static/js/app/app.js"></script>
     <script src="static/js/app/controllers.js"></script>
-    <!--<script src="/static/js/app/directives.js"></script>-->
+    <script src="/static/js/app/directives.js"></script>
     <!--<script src="/static/js/app/services.js"></script>-->
 
 	<title>
@@ -67,34 +67,34 @@
                 </div>
                 <div class="select_game_block" ng-switch-when="step_2">
                     <p class="font-game">Difficulty Level</p>
-                    <button class="bt" ng-click="step_2(2)">
+                    <button class="bt" ng-click="step_2('super easy')">
                       super easy
                     </button>
-                    <button class="bt" ng-click="step_2(4)">
+                    <button class="bt" ng-click="step_2('easy')">
                       easy
                     </button>
-                    <button class="bt" ng-click="step_2('6')">
+                    <button class="bt" ng-click="step_2('middle')">
                       middle
                     </button>
-                    <button class="bt" ng-click="step_2('8')">
+                    <button class="bt" ng-click="step_2('hard')">
                       hard
                     </button>
-                    <button class="bt" ng-click="step_2('8')">
+                    <button class="bt" ng-click="step_2('super hard')">
                       super hard
                     </button>
                 </div>
                 <div class="select_game_block" ng-switch-when="step_3">
-                    <p class="font-game">What will you look for?</p>
-                    <!--<custom-direct></custom-direct>-->
-                    <!--<button class="bt" ng-click="step_3('color')">-->
-                      <!--Treasure-->
-                    <!--</button>-->
-                    <!--<button class="bt" ng-click="step_3('digit')">-->
-                      <!--Numbers-->
-                    <!--</button>-->
-                    <!--<button class="bt" ng-click="step_3('socks')">-->
-                      <!--Socks-->
-                    <!--</button>-->
+                    <p class="font-game">What will be you looking for?</p>
+                    <custom-direct></custom-direct>
+                    <button class="bt" ng-click="step_3('color')">
+                      Treasure
+                    </button>
+                    <button class="bt" ng-click="step_3('digit')">
+                      Numbers
+                    </button>
+                    <button class="bt" ng-click="step_3('socks')">
+                      Socks
+                    </button>
                     <!--<button class="bt" ng-click="step_3('word')">-->
                       <!--Слова-->
                     <!--</button>-->
