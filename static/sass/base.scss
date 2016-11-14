@@ -1,0 +1,70 @@
+//@import "compass/css3";
+@import "compass";
+
+
+$font-base-family: 'Flavors', cursive;
+$color-font-base: #1CB3CD;
+$base-background:url("/static/img/65a64d7f3c7ad6224dc349849c71f26d.png");
+@mixin font-base($size) {
+  font: $size $font-base-family;
+}
+
+body{
+  background-image: $base-background;
+}
+.base_container{
+  width: 1000px;
+  margin: auto;
+}
+.font-game{
+    color: $color-font-base;
+    @include font-base(60px);
+  text-align: center;
+}
+.button-constant{
+  border: none;
+  min-height: 70px;
+  color: $color-font-base;
+  background-color: #ffffff;
+
+}
+.button-constant:hover{
+//  @include font-base(52px);
+//  width: 200px;
+//  min-height: 70px;
+  border: none;
+  color: #ffffff;
+  background-color: $color-font-base;
+
+}
+.bt{
+  @extend .button-constant;
+  @include font-base(52px);
+  width: 200px;
+  float:left;
+}
+.bt:hover{
+  @extend .button-constant;
+//float:left;
+}
+.container_selectors{
+   width: 420px;
+    position: relative;
+    top: 200px;
+    z-index: 4;
+    margin: auto;
+    opacity: 0.4;
+    background-color: azure;
+}
+#container_layer{
+  position: absolute;
+  top: 100px;
+  overflow: hidden;
+  width: 1000px;
+  height: 800px;
+}
+img{
+  position: absolute;
+}
+
+@import "mini_carousel_styles";

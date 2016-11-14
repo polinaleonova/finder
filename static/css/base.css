@@ -1,0 +1,123 @@
+/* line 12, ../sass/base.scss */
+body {
+  background-image: url("/static/img/65a64d7f3c7ad6224dc349849c71f26d.png");
+}
+
+/* line 15, ../sass/base.scss */
+.base_container {
+  width: 1000px;
+  margin: auto;
+}
+
+/* line 19, ../sass/base.scss */
+.font-game {
+  color: #1CB3CD;
+  font: 60px "Flavors", cursive;
+  text-align: center;
+}
+
+/* line 24, ../sass/base.scss */
+.button-constant, .bt, .bt:hover, .carousel_ok {
+  border: none;
+  min-height: 70px;
+  color: #1CB3CD;
+  background-color: #ffffff;
+}
+
+/* line 31, ../sass/base.scss */
+.button-constant:hover, .bt:hover, .carousel_ok:hover, .btn_left:hover, .btn_right:hover {
+  border: none;
+  color: #ffffff;
+  background-color: #1CB3CD;
+}
+
+/* line 40, ../sass/base.scss */
+.bt {
+  font: 52px "Flavors", cursive;
+  width: 200px;
+  float: left;
+}
+
+/* line 50, ../sass/base.scss */
+.container_selectors {
+  width: 420px;
+  position: relative;
+  top: 200px;
+  z-index: 4;
+  margin: auto;
+  opacity: 0.4;
+  background-color: azure;
+}
+
+/* line 59, ../sass/base.scss */
+#container_layer {
+  position: absolute;
+  top: 100px;
+  overflow: hidden;
+  width: 1000px;
+  height: 800px;
+}
+
+/* line 66, ../sass/base.scss */
+img {
+  position: absolute;
+}
+
+/* line 1, ../sass/_mini_carousel_styles.scss */
+.carousel_wrapper {
+  font: 68px "Flavors", cursive;
+  color: #1CB3CD;
+  width: 420px;
+  margin: auto;
+  height: 100px;
+  text-align: center;
+}
+
+/* line 9, ../sass/_mini_carousel_styles.scss */
+.carousel_btn, .btn_left, .btn_right {
+  width: 50px;
+  height: inherit;
+  text-align: center;
+}
+
+/* line 14, ../sass/_mini_carousel_styles.scss */
+.carousel_selector p, .carousel_btn p, .btn_left p, .btn_right p {
+  margin: auto;
+}
+
+/* line 17, ../sass/_mini_carousel_styles.scss */
+.carousel_btn:hover, .btn_left:hover, .btn_right:hover {
+  color: #ffffff;
+  background-color: #1CB3CD;
+}
+
+/* line 21, ../sass/_mini_carousel_styles.scss */
+.btn_left {
+  float: left;
+}
+
+/* line 25, ../sass/_mini_carousel_styles.scss */
+.btn_right {
+  float: right;
+}
+
+/* line 29, ../sass/_mini_carousel_styles.scss */
+.btn_left img, .btn_right img {
+  height: inherit;
+  width: inherit;
+  position: relative;
+}
+
+/* line 34, ../sass/_mini_carousel_styles.scss */
+.carousel_selector {
+  width: 320px;
+  height: inherit;
+  margin: auto;
+  position: relative;
+  float: left;
+}
+
+/* line 41, ../sass/_mini_carousel_styles.scss */
+.carousel_ok {
+  font: 52px "Flavors", cursive;
+}
