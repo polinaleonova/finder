@@ -1,6 +1,7 @@
 //@import "compass/css3";
 @import "compass";
 
+
 $font-base-family: 'Flavors', cursive;
 $color-font-base: #1CB3CD;
 $base-background:url("/static/img/65a64d7f3c7ad6224dc349849c71f26d.png");
@@ -18,28 +19,36 @@ body{
 .font-game{
     color: $color-font-base;
     @include font-base(60px);
-    @include border-radius(4px, 4px);
   text-align: center;
 }
 .button-constant{
-  @include font-base(52px);
-  width: 200px;
-  min-height: 70px;
   border: none;
-  float:left;
+  min-height: 70px;
+  color: $color-font-base;
+  background-color: #ffffff;
+
+}
+.button-constant:hover{
+//  @include font-base(52px);
+//  width: 200px;
+//  min-height: 70px;
+  border: none;
+  color: #ffffff;
+  background-color: $color-font-base;
+
 }
 .bt{
   @extend .button-constant;
-  color: $color-font-base;
-  background-color: #ffffff;
+  @include font-base(52px);
+  width: 200px;
+  float:left;
 }
 .bt:hover{
   @extend .button-constant;
-  color: #ffffff;
-  background-color: $color-font-base;
+//float:left;
 }
 .container_selectors{
-   width: 400px;
+   width: 420px;
     position: relative;
     top: 200px;
     z-index: 4;
@@ -57,3 +66,5 @@ body{
 img{
   position: absolute;
 }
+
+@import "mini_carousel_styles";

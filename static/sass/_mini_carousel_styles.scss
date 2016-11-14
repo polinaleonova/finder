@@ -1,0 +1,49 @@
+.carousel_wrapper{
+  @include font-base(68px);
+  color: $color-font-base;
+  width: 420px;
+  margin: auto;
+  height: 100px;
+  text-align: center;
+}
+.carousel_btn{
+  width: 50px;
+  height: inherit;
+  text-align: center;
+}
+.carousel_selector p,.carousel_btn p{
+  margin: auto;
+}
+.carousel_btn:hover{
+  color: #ffffff;
+  background-color: $color-font-base;
+}
+.btn_left{
+  @extend .carousel_btn;
+  float: left;
+}
+.btn_right{
+  @extend .carousel_btn;
+  float: right;
+}
+.btn_left img, .btn_right img{
+  height: inherit;
+  width: inherit;
+  position: relative;
+}
+.carousel_selector{
+  width: 320px;
+  height: inherit;
+  margin: auto;
+  position: relative;
+  float: left;
+}
+.carousel_ok{
+  @include font-base(52px);
+  @extend .button-constant;
+//  float: none;
+}
+.btn_left:hover, .btn_right:hover,
+.carousel_ok:hover{
+  @extend .button-constant:hover;
+}

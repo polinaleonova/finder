@@ -8,10 +8,9 @@ finderControllers.controller('StepController', ['$scope','$location','$http','$r
             url: 'static/game_data.json'
             }).success(function(data){
             $scope.data = data;
-            $scope.all_elements = $scope.data["elements"];
-            $scope.all_levels = $scope.data["levels"];
+            $scope.all_elements = Object.keys($scope.data["elements"]);
+            $scope.all_levels = Object.keys($scope.data["levels"]);
         });
-
     $scope.step_1 = function(p){
         $scope.players = p;
         $scope.steps = 'step_2'

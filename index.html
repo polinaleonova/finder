@@ -11,7 +11,7 @@
 	<!--<meta property="og:title" content="finder">-->
 	<!--<meta property="og:description" content="Webgame for the little ones">-->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Annie+Use+Your+Telescope|Cabin+Sketch|Flavors|Fontdiner+Swanky|Kranky|Ruge+Boogie" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/game.css">
+    <link rel="stylesheet" href="static/css/base.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
@@ -67,37 +67,11 @@
                 </div>
                 <div class="select_game_block" ng-switch-when="step_2">
                     <p class="font-game">Difficulty Level</p>
-                    <button class="bt" ng-click="step_2('super easy')">
-                      super easy
-                    </button>
-                    <button class="bt" ng-click="step_2('easy')">
-                      easy
-                    </button>
-                    <button class="bt" ng-click="step_2('middle')">
-                      middle
-                    </button>
-                    <button class="bt" ng-click="step_2('hard')">
-                      hard
-                    </button>
-                    <button class="bt" ng-click="step_2('super hard')">
-                      super hard
-                    </button>
+                    <mini-carousel selectors="all_levels" lft-btn="" rght-btn="" ok-handler="step_2"/>
                 </div>
                 <div class="select_game_block" ng-switch-when="step_3">
-                    <p class="font-game">What will be you looking for?</p>
-                    <custom-direct></custom-direct>
-                    <button class="bt" ng-click="step_3('color')">
-                      Treasure
-                    </button>
-                    <button class="bt" ng-click="step_3('digit')">
-                      Numbers
-                    </button>
-                    <button class="bt" ng-click="step_3('socks')">
-                      Socks
-                    </button>
-                    <!--<button class="bt" ng-click="step_3('word')">-->
-                      <!--Слова-->
-                    <!--</button>-->
+                    <p class="font-game">What will you be looking for?</p>
+                    <mini-carousel selectors="all_elements" lft-btn="" rght-btn="" ok-handler="step_3"/>
                 </div>
                 <div class="select_game_block" ng-switch-when="step_4">
                     <button class="bt" ng-click="startgame(players,level,element)">Start >>>-----></button>
@@ -130,6 +104,7 @@
                 <img src="static/img/art-tree.gif" id="layer2" style="opacity: 1;z-index: 2">
                 <img src="static/img/art-boat.gif" id="layer3" style="opacity: 1;z-index: 3">
                 </div>
+        <!--<mini-carousel selectors="all_elements" lft-btn="static/img/socks/sock2.gif" rght-btn="" />-->
         </div>
     <!--</div>-->
 

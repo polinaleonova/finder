@@ -1,0 +1,30 @@
+<!--<mini-carusel lft_btn="" rght="" >-->
+
+<!-->
+
+    <!--if not lft or rght - use "<" and ">"-->
+
+    <!--ob = {-->
+    <!--key1:val1,-->
+    <!--key2:val2,-->
+    <!--...-->
+    <!--}-->
+
+    <!--for key in ob.keys:-->
+    <!--<div param="{{val}}">key</div>-->
+<div class="carousel_wrapper">
+    <div class="btn_left" ng-click="preElement()">
+        <img ng-if="leftb" ng-src="{{leftb}}">
+        <p ng-if="!leftb"><</p>
+    </div>
+    <div class="carousel_selector">
+        <div ng-repeat="selector in selectorsCarousel">
+            <p ng-if="current_selector_index == $index">{{ selector }}</p>
+        </div>
+    </div>
+    <div class="btn_right" ng-click="nextElement()">
+        <img ng-if="rightb" ng-src="{{rightb}}">
+        <p ng-if="!rightb">></p>
+    </div>
+    <button class="carousel_ok" ng-click="OkHandler()">OK</button>
+</div>
