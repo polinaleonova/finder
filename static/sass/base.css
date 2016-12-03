@@ -8,7 +8,7 @@ Error: File to import not found or unreadable: compass.
 4: 
 5: $font-base-family: 'Flavors', cursive;
 6: $color-font-base: #1CB3CD;
-7: $base-background:url("/static/img/65a64d7f3c7ad6224dc349849c71f26d.png");
+7: $base-background:url("/static/img/back_no_parallax.jpg");
 
 Backtrace:
 base.scss:2
@@ -54,4 +54,4 @@ base.scss:2
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: compass.\A         on line 2 of base.scss\A \A 1: //@import \"compass/css3\";\A 2: @import \"compass\";\A 3: \A 4: \A 5: $font-base-family: 'Flavors', cursive;\A 6: $color-font-base: #1CB3CD;\A 7: $base-background:url(\"/static/img/65a64d7f3c7ad6224dc349849c71f26d.png\");"; }
+  content: "Error: File to import not found or unreadable: compass.\A         on line 2 of base.scss\A \A 1: //@import \"compass/css3\";\A 2: @import \"compass\";\A 3: \A 4: \A 5: $font-base-family: 'Flavors', cursive;\A 6: $color-font-base: #1CB3CD;\A 7: $base-background:url(\"/static/img/back_no_parallax.jpg\");"; }

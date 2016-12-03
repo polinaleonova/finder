@@ -4,16 +4,20 @@
 
 $font-base-family: 'Flavors', cursive;
 $color-font-base: #1CB3CD;
-$base-background:url("/static/img/65a64d7f3c7ad6224dc349849c71f26d.png");
+$base-background:url("/static/img/back_no_parallax.jpg");
 @mixin font-base($size) {
   font: $size $font-base-family;
 }
-
+@import "mini_carousel_styles";
 body{
   background-image: $base-background;
+  background-repeat: no-repeat;
+  background-size: 100%;
+    color: $color-font-base;
+   @include font-base(40px);
 }
 .base_container{
-  width: 1000px;
+//  width: 1000px;
   margin: auto;
 }
 .font-game{
@@ -29,9 +33,6 @@ body{
 
 }
 .button-constant:hover{
-//  @include font-base(52px);
-//  width: 200px;
-//  min-height: 70px;
   border: none;
   color: #ffffff;
   background-color: $color-font-base;
@@ -45,26 +46,167 @@ body{
 }
 .bt:hover{
   @extend .button-constant;
-//float:left;
+}
+.bt:focus{
+  outline: none;
+  opacity: 0.9;
+}
+.bt_start{
+  @extend .bt;
+  margin: auto;
 }
 .container_selectors{
-   width: 420px;
+      max-width: 420px;
+    min-width: 200px;
+//    max-height: 420px;
+    min-height: 200px;
+//   width: 420px;
     position: relative;
     top: 200px;
-    z-index: 4;
+//    z-index: 4;
     margin: auto;
-    opacity: 0.4;
-    background-color: azure;
+//    opacity: 0.4;
+//    background-color: azure;
+}
+.frame_over_window{
+  position: absolute;
+  pointer-events: none;
+  width: inherit;
+  height: inherit;
+//    top: 74px;
+//    position: absolute;
+}
+.frame_top_left{
+  pointer-events: none;
+    position: absolute;
+  top: -70px;
+  left: -70px;
+//    background-image: url("/static/img/clover_top_left.gif");
+  background: url("/static/img/clover_top_left.gif");
+    width: 300px;
+    height: 300px;
+    z-index: 7;
+}
+.frame_bottom_right{
+  pointer-events: none;
+    position: absolute;
+  bottom: -70px;
+  right: -70px;
+  float: right;
+//    background-image: url("/static/img/clover_bottom_right.gif");
+  background: url("/static/img/clover_bottom_right.gif") bottom right;
+    width: 300px;
+    height: 300px;
+  z-index: 7;
+}
+.select_game_block{
+  position: relative;
+  min-width: 300px;
+//  min-height: 200px;
 }
 #container_layer{
   position: absolute;
-  top: 100px;
+//  top: 100px;
   overflow: hidden;
-  width: 1000px;
-  height: 800px;
+  width: 100%;
+//  height: 100%;
 }
 img{
+  width: 100%;
+  height: 100%;
   position: absolute;
 }
+.container_gamefield {
+//      background-image: url("/static/img/trifolium_2.gif");
+//    background-position-y: 66px;
+//    background-size: 608px;
+//    background-repeat: no-repeat;
+//  color: $color-font-base;
+//   @include font-base(40px);
+//  top: 160px;
+  z-index: 5;
+  position: relative;
+//  width: 600px;
+//  height: 640px;
+  margin: auto;
+//  background-color: #ffffff;
+}
+.field {
+    /*position: fixed;*/
+    margin: auto;
+    margin-top: 10px;
+    height: 432px;
+    width: 432px;
+//    border: 2px solid #002a80;
+//  background-image: url("/static/img/ramk281.png");
+}
+.field_cell {
+  margin: 4px;
+    height: 100px;
+    width: 100px;
+//    background-color: #ABE5DE;
+  background-color: #542406;
+      opacity: 0.8;
+//    border: 2px solid #ffffff;
+    border-radius: 9px;
+    position: relative;
+    float: left;
+}
+.field_cell:hover{
+  opacity: 0.7;
+}
+.open:hover, .col:hover{
+  opacity: 0.8;
+}
+.frame_over_field{
+      pointer-events: none;
+    top: 74px;
+    position: absolute;
+    background-image: url("/static/img/trifolium_2.gif");
+    width: 600px;
+    height: 600px;
+}
+.show{
+    background-color: #EBC678;
+}
+.open{
+    background-color: #6C7010;
+}
+.scores_style {
+  float: left;
+}
+.field_cell img{
+    height: inherit;
+}
+.dialog {
+  color: $color-font-base;
+  @include font-base(40px);
+  position:fixed;
+  border-radius: 18px;
+  left:50%;
+  top:50%;
+  z-index:100;
+  background:#fff;
+  min-width:400px;
+  max-width:1000px;
+  min-height:200px;
+}
+.base_text{
+  color: $color-font-base;
+  @include font-base(40px);
+}
+.dialog > .w {
+  padding:16px 20px;
+  text-align: center;
 
-@import "mini_carousel_styles";
+}
+.dialog-overlay {
+  position:fixed;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  background:#000;
+  z-index:90;
+  opacity:0.5;
+}
