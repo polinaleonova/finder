@@ -1,7 +1,7 @@
 'use strict';
 
 var finderControllers = angular.module('finderControllers',[]);
-finderControllers.controller('StepController', ['$scope','$location','$http','$rootScope', function($scope, $location, $http, $rootScope){
+finderControllers.controller('StepController', ['$scope','$location','$http','$rootScope','share', function($scope, $location, $http, $rootScope, share){
     $scope.base_href = document.location.pathname; //for github pages
     $http({
             method: 'GET',
@@ -11,6 +11,8 @@ finderControllers.controller('StepController', ['$scope','$location','$http','$r
             $scope.all_elements = Object.keys($scope.data["elements"]);
             $scope.all_levels = Object.keys($scope.data["levels"]);
         });
+    $scope.dialog_win_content = 'static/templates/dialog_win_content.html';
+    $scope.dialog_fail_content = 'static/templates/dialog_fail_content.html';
     $scope.step_1 = function(p){
         $scope.players = p;
         $scope.steps = 'step_2'
@@ -29,14 +31,108 @@ finderControllers.controller('StepController', ['$scope','$location','$http','$r
         $location.path( path );
         var elements_list = $scope.data.elements[$scope.element],
             count_elements = $scope.data.levels[$scope.level][0];
-        $rootScope.game_field = doubling_and_shuffle_elements(elements_list, count_elements);
-        $rootScope.score   = $scope.data.levels[$scope.level][1]
+        $scope.game_field = doubling_and_shuffle_elements(elements_list, count_elements);
+        share.setScores($scope.data.levels[$scope.level][1])
     };
-    $scope.set_to_start = function(){
-       $scope.steps = 'step_1';
-       $rootScope.win = false;
-       $rootScope.fail = false
+    $scope.alertContent={}
+    }]);
+finderControllers.controller('OnePlayerController', ['$scope','$rootScope','$timeout','$dialog','share', function($scope,$rootScope,$timeout,$dialog, share) {
+    $scope.score = share.score;
+    $scope.subtractScore = share.subtractScore;
+    $scope.open_list = []; //cells which was opened and will be disabled
+    $scope.show_list = []; // cells which was showed and will be checked
+    $scope.indexInShowList = function(index){
+            return $scope.show_list.includes(index)
+        };
+    $scope.indexInOpenList = function(index){
+            return $scope.open_list.includes(index)
+        };
+    $scope.showCell = function(index){
+            return ($scope.show_list.includes(index) || $scope.open_list.includes(index))
+        };
+    $scope.openCell = function(index){
+        if (!$scope.show_list.includes(index) && !$scope.open_list.includes(index)
+            && $scope.show_list.length <= 1){
+            $scope.show_list.push(index);
+            if ($scope.show_list.length == 2){
+                var first_val = $scope.game_field[$scope.show_list[0]],
+                    second_val = $scope.game_field[$scope.show_list[1]];
+                if (first_val == second_val){
+                    $scope.open_list.push($scope.show_list[0], $scope.show_list[1]);
+                    $scope.show_list = [];
+                    if ($scope.open_list.length == $scope.game_field.length) {
+                            $scope.content = $scope.dialog_win_content;
+                            $dialog($scope.content);
+                        }
+                }
+                else {
+                    $timeout(function () {
+                        $scope.show_list = [];
+                        $scope.score = $scope.subtractScore();
+                            if ($scope.score == 0) {
+                                $scope.content = $scope.dialog_fail_content;
+                                $dialog($scope.content);
+                            }
+                    }, 1000)
+                }
+            }
+        }
     };
+}]);
+finderControllers.controller('TwoPlayersController', ['$scope', '$timeout', '$dialog', 'share', function($scope, $timeout, $dialog, share) {
+    $scope.first_player = { player : '1 Player', score : 0 };
+    $scope.second_player = { player : '2 Player', score : 0 };
+    $scope.current_player = $scope.first_player;
+    $scope.open_list = []; //cells which was opened and will be disabled
+    $scope.show_list = []; // cells which was showed and will be checked
+    $scope.indexInShowList = function(index){
+            return $scope.show_list.includes(index)
+        };
+    $scope.indexInOpenList = function(index){
+            return $scope.open_list.includes(index)
+        };
+    $scope.showCell = function(index){
+            return ($scope.show_list.includes(index) || $scope.open_list.includes(index))
+        };
+    $scope.changePlayerAndShowCurrent = function(){
+        $scope.current_player = ($scope.current_player == $scope.first_player ?
+            $scope.second_player : $scope.first_player);
+    };
+    $scope.openCell = function(index){
+        if (!$scope.show_list.includes(index) && !$scope.open_list.includes(index)
+            && $scope.show_list.length <= 1){
+            $scope.show_list.push(index);
+            if ($scope.show_list.length == 2){
+                var first_val = $scope.game_field[$scope.show_list[0]],
+                    second_val = $scope.game_field[$scope.show_list[1]];
+                if (first_val == second_val){
+                    $scope.open_list.push($scope.show_list[0], $scope.show_list[1]);
+                    $scope.show_list = [];
+                    $scope.current_player.score += 1;
+                    if ($scope.open_list.length == $scope.game_field.length){
+                        if ($scope.first_player.score == $scope.second_player.score){
+                            share.winner = 'Dead heat!'
+                        }
+                        else {
+                            share.winner = ($scope.first_player.score > $scope.second_player.score ?
+                                $scope.first_player.player : $scope.second_player.player) + ' won!';
+                        }
+                            $scope.winner = share.winner;
+                        $scope.content = $scope.dialog_win_content;
+                        $dialog($scope.content);
+                    }
+                }
+                else {
+                    $scope.changePlayerAndShowCurrent();
+                    $timeout(function () {
+                        $scope.show_list = [];
+                    }, 1000)
+                }
+            }
+        }
+    }
+}]);
+finderControllers.controller('ParallaxController', ['$scope', function($scope) {
     var tempX = 0;
     var tempY = 0;
     $scope.change_x = function(e){
@@ -48,55 +144,5 @@ finderControllers.controller('StepController', ['$scope','$location','$http','$r
         document.getElementById('layer2').style.top =tempY*(-0.06)+'px';
         document.getElementById('layer3').style.left =tempX*(-0.2)+'px';
         document.getElementById('layer3').style.top =tempY*(-0.2)+'px';
-    }
-    }]);
-finderControllers.controller('OnePlayerController', ['$scope','$rootScope','$timeout',function($scope,$rootScope,$timeout) {
-        $rootScope.win = false;
-        $rootScope.fail = false;
-        $scope.cell_opened = false;
-        $scope.show_list = [];
-        $scope.indexInShowList = function(index){
-            return index in $scope.show_list
-        };
-        $scope.clickHandler = function(index){
-            var current_element = angular.element(document.getElementById('id_' + index));
-                if (!current_element.hasClass('open') && !current_element.hasClass('col')
-                    && angular.element(document.getElementsByClassName('col')).length <= 1) {
-                    $scope.show_list.push(index);
-                    current_element.addClass('col');
-                    document.getElementById('id_' + index).innerHTML = '<img class="img_cell" src="' + $rootScope.game_field[index] + '">';
-                    //                $timeout(function () {
-                    var showed_elements = angular.element(document.getElementsByClassName('col'));
-                    var count_showed_cells = showed_elements.length;
-                    if (count_showed_cells == 2) {
-
-                        var first_cell_content = showed_elements[0].innerHTML;
-                        var second_cell_content = showed_elements[1].innerHTML;
-                        if (first_cell_content == second_cell_content) {
-                            showed_elements[0].classList.add('open');
-                            showed_elements[0].classList.remove('col');
-                            showed_elements[1].classList.add('open');
-                            showed_elements[1].classList.remove('col');
-                            if (angular.element(document.getElementsByClassName('open')).length == $rootScope.game_field.length) {
-                                $rootScope.win = true;
-                            }
-                        }
-                        else {
-                            $timeout(function () {
-                                showed_elements[0].classList.remove('col');
-                                showed_elements[1].classList.remove('col');
-                                showed_elements[0].innerHTML = '';
-                                showed_elements[1].innerHTML = '';
-                                $rootScope.score -= 1;
-                                if ($rootScope.score == 0) {
-                                    $rootScope.fail = true;
-                                }
-                            }, 1000)
-                        }
-                        $scope.show_list = []
-                    }
-                    //                }, 5, index)
-                }
-            }
-
+    };
 }]);

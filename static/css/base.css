@@ -1,68 +1,3 @@
-/* line 12, ../sass/base.scss */
-body {
-  background-image: url("/static/img/65a64d7f3c7ad6224dc349849c71f26d.png");
-}
-
-/* line 15, ../sass/base.scss */
-.base_container {
-  width: 1000px;
-  margin: auto;
-}
-
-/* line 19, ../sass/base.scss */
-.font-game {
-  color: #1CB3CD;
-  font: 60px "Flavors", cursive;
-  text-align: center;
-}
-
-/* line 24, ../sass/base.scss */
-.button-constant, .bt, .bt:hover, .carousel_ok {
-  border: none;
-  min-height: 70px;
-  color: #1CB3CD;
-  background-color: #ffffff;
-}
-
-/* line 31, ../sass/base.scss */
-.button-constant:hover, .bt:hover, .carousel_ok:hover, .btn_left:hover, .btn_right:hover {
-  border: none;
-  color: #ffffff;
-  background-color: #1CB3CD;
-}
-
-/* line 40, ../sass/base.scss */
-.bt {
-  font: 52px "Flavors", cursive;
-  width: 200px;
-  float: left;
-}
-
-/* line 50, ../sass/base.scss */
-.container_selectors {
-  width: 420px;
-  position: relative;
-  top: 200px;
-  z-index: 4;
-  margin: auto;
-  opacity: 0.4;
-  background-color: azure;
-}
-
-/* line 59, ../sass/base.scss */
-#container_layer {
-  position: absolute;
-  top: 100px;
-  overflow: hidden;
-  width: 1000px;
-  height: 800px;
-}
-
-/* line 66, ../sass/base.scss */
-img {
-  position: absolute;
-}
-
 /* line 1, ../sass/_mini_carousel_styles.scss */
 .carousel_wrapper {
   font: 68px "Flavors", cursive;
@@ -117,7 +52,240 @@ img {
   float: left;
 }
 
-/* line 41, ../sass/_mini_carousel_styles.scss */
+/* line 44, ../sass/_mini_carousel_styles.scss */
 .carousel_ok {
   font: 52px "Flavors", cursive;
+  margin: auto;
+  display: block;
+  width: 200px;
+}
+
+/* line 52, ../sass/_mini_carousel_styles.scss */
+.btn_left:focus, .btn_right:focus, .carousel_ok:focus {
+  outline: none;
+  opacity: 0.9;
+}
+
+/* line 12, ../sass/base.scss */
+body {
+  background-image: url("/static/img/back_no_parallax.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: #1CB3CD;
+  font: 40px "Flavors", cursive;
+}
+
+/* line 19, ../sass/base.scss */
+.base_container {
+  margin: auto;
+}
+
+/* line 23, ../sass/base.scss */
+.font-game {
+  color: #1CB3CD;
+  font: 60px "Flavors", cursive;
+  text-align: center;
+}
+
+/* line 28, ../sass/base.scss */
+.button-constant, .carousel_ok, .bt, .bt_start, .bt:hover, .bt_start:hover {
+  border: none;
+  min-height: 70px;
+  color: #1CB3CD;
+  background-color: #ffffff;
+}
+
+/* line 35, ../sass/base.scss */
+.button-constant:hover, .carousel_ok:hover, .btn_left:hover, .btn_right:hover, .bt:hover, .bt_start:hover {
+  border: none;
+  color: #ffffff;
+  background-color: #1CB3CD;
+}
+
+/* line 41, ../sass/base.scss */
+.bt, .bt_start {
+  font: 52px "Flavors", cursive;
+  width: 200px;
+  float: left;
+}
+
+/* line 50, ../sass/base.scss */
+.bt:focus, .bt_start:focus {
+  outline: none;
+  opacity: 0.9;
+}
+
+/* line 54, ../sass/base.scss */
+.bt_start {
+  margin: auto;
+}
+
+/* line 58, ../sass/base.scss */
+.container_selectors {
+  max-width: 420px;
+  min-width: 200px;
+  min-height: 200px;
+  position: relative;
+  top: 200px;
+  margin: auto;
+}
+
+/* line 71, ../sass/base.scss */
+.frame_over_window {
+  position: absolute;
+  pointer-events: none;
+  width: inherit;
+  height: inherit;
+}
+
+/* line 79, ../sass/base.scss */
+.frame_top_left {
+  pointer-events: none;
+  position: absolute;
+  top: -70px;
+  left: -70px;
+  background: url("/static/img/clover_top_left.gif");
+  width: 300px;
+  height: 300px;
+  z-index: 7;
+}
+
+/* line 90, ../sass/base.scss */
+.frame_bottom_right {
+  pointer-events: none;
+  position: absolute;
+  bottom: -70px;
+  right: -70px;
+  float: right;
+  background: url("/static/img/clover_bottom_right.gif") bottom right;
+  width: 300px;
+  height: 300px;
+  z-index: 7;
+}
+
+/* line 102, ../sass/base.scss */
+.select_game_block {
+  position: relative;
+  min-width: 300px;
+}
+
+/* line 107, ../sass/base.scss */
+#container_layer {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* line 114, ../sass/base.scss */
+img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* line 119, ../sass/base.scss */
+.container_gamefield {
+  z-index: 5;
+  position: relative;
+  margin: auto;
+}
+
+/* line 134, ../sass/base.scss */
+.field {
+  /*position: fixed;*/
+  margin: auto;
+  margin-top: 10px;
+  height: 432px;
+  width: 432px;
+}
+
+/* line 143, ../sass/base.scss */
+.field_cell {
+  margin: 4px;
+  height: 100px;
+  width: 100px;
+  background-color: #542406;
+  opacity: 0.8;
+  border-radius: 9px;
+  position: relative;
+  float: left;
+}
+
+/* line 155, ../sass/base.scss */
+.field_cell:hover {
+  opacity: 0.7;
+}
+
+/* line 158, ../sass/base.scss */
+.open:hover, .col:hover {
+  opacity: 0.8;
+}
+
+/* line 161, ../sass/base.scss */
+.frame_over_field {
+  pointer-events: none;
+  top: 74px;
+  position: absolute;
+  background-image: url("/static/img/trifolium_2.gif");
+  width: 600px;
+  height: 600px;
+}
+
+/* line 169, ../sass/base.scss */
+.show {
+  background-color: #EBC678;
+}
+
+/* line 172, ../sass/base.scss */
+.open {
+  background-color: #6C7010;
+}
+
+/* line 175, ../sass/base.scss */
+.scores_style {
+  float: left;
+}
+
+/* line 178, ../sass/base.scss */
+.field_cell img {
+  height: inherit;
+}
+
+/* line 181, ../sass/base.scss */
+.dialog {
+  color: #1CB3CD;
+  font: 40px "Flavors", cursive;
+  position: fixed;
+  border-radius: 18px;
+  left: 50%;
+  top: 50%;
+  z-index: 100;
+  background: #fff;
+  min-width: 400px;
+  max-width: 1000px;
+  min-height: 200px;
+}
+
+/* line 194, ../sass/base.scss */
+.base_text {
+  color: #1CB3CD;
+  font: 40px "Flavors", cursive;
+}
+
+/* line 198, ../sass/base.scss */
+.dialog > .w {
+  padding: 16px 20px;
+  text-align: center;
+}
+
+/* line 203, ../sass/base.scss */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #000;
+  z-index: 90;
+  opacity: 0.5;
 }

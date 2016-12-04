@@ -1,6 +1,6 @@
 'use strict';
 
-var Game = angular.module('Game', ['ngRoute','finderControllers','finderDirectives']);
+var Game = angular.module('Game', ['ngRoute','finderControllers','finderDirectives','finderServices']);
 
     Game.config(function($routeProvider, $locationProvider) {
         $routeProvider.when('/startgame/one/:level/:element/',
@@ -15,6 +15,7 @@ var Game = angular.module('Game', ['ngRoute','finderControllers','finderDirectiv
            });
         $routeProvider.otherwise({ redirectTo: '/'});
         $locationProvider.html5Mode(true);
+
 });
 
 

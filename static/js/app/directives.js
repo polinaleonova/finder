@@ -2,59 +2,36 @@
 
 var finderDirectives = angular.module('finderDirectives', []);
 
-finderDirectives.directive('miniCarousel', function($compile) {
+finderDirectives.directive('miniCarousel', function() {
 
     return {
         restrict: "E",
-//        replace: true,
-//        transclude: true,
         scope: {selectorsCarousel: "=selectors",
                 leftb: "@lftBtn",
                 rightb: "@rghtBtn",
                 okHandler: "&"
                 },
-        // todo :review later-- use controller when you want to expose an API to other directives. Otherwise use link
-//        controller: ['$scope', function($scope){
-//            $scope.current_selector_index = 0;
-//            $scope.preElement = function(){
-//                if ($scope.current_selector_index <= 0){
-//                    $scope.current_selector_index = $scope.selectorsCarusel.length - 1;
-//                }
-//                else{
-//                    $scope.current_selector_index--
-//                }
-//            };
-//            $scope.nextElement = function() {
-//                if ($scope.current_selector_index >= $scope.selectorsCarusel.length - 1) {
-//                    $scope.current_selector_index = 0;
-//                }
-//                else {
-//                    $scope.current_selector_index++
-//                }
-//            }
-
-//        }],
-        link: function(scope){
-            scope.current_selector_index = 0;
-            scope.preElement = function(){
-                if (scope.current_selector_index <= 0){
-                    scope.current_selector_index = scope.selectorsCarousel.length - 1;
+        link: function($scope){
+            $scope.current_selector_index = 0;
+            $scope.preElement = function(){
+                if ($scope.current_selector_index <= 0){
+                    $scope.current_selector_index = $scope.selectorsCarousel.length - 1;
                 }
                 else{
-                    scope.current_selector_index--
+                    $scope.current_selector_index--
                 }
             };
-            scope.nextElement = function() {
-                if (scope.current_selector_index >= scope.selectorsCarousel.length - 1) {
-                    scope.current_selector_index = 0;
+            $scope.nextElement = function() {
+                if ($scope.current_selector_index >= $scope.selectorsCarousel.length - 1) {
+                    $scope.current_selector_index = 0;
                 }
                 else {
-                    scope.current_selector_index++
+                    $scope.current_selector_index++
                 }
             };
-            scope.OkHandler = function(){
-                scope.current_selector = scope.selectorsCarousel[scope.current_selector_index];
-                scope.okHandler()(scope.current_selector);
+            $scope.OkHandler = function(){
+                $scope.current_selector = $scope.selectorsCarousel[$scope.current_selector_index];
+                $scope.okHandler()($scope.current_selector);
             }
 
         },
@@ -62,3 +39,39 @@ finderDirectives.directive('miniCarousel', function($compile) {
     }
 
 });
+finderDirectives.directive('makeFrame', function() {
+    return {
+        restrict: "A",
+        replace: true,
+        template: '<div><div class="frame_top_left"></div><div class="frame_bottom_right"></div></div>'
+    }
+
+});
+
+finderDirectives.directive('dialogWindow',['$timeout', '$compile','$location', 'share', function($timeout, $compile, $location, share) {
+    return {
+        restrict: 'A',
+        scope: true,
+        templateUrl: "static/templates/make_alert.html",
+        link: function($scope, $element, $attrs) {
+            $scope.winner = share.winner;
+            $scope.visible = true;
+            $scope.content = $attrs.dialogWindow;
+            $scope.$overlay = angular.element('<div class="dialog-overlay ng-hide" ng-show="visible"></div>');
+            angular.element(document.body).append($scope.$overlay);
+            $compile($scope.$overlay)($scope);
+            $scope.set_to_start = function(){
+                $scope.visible = false;
+                $location.path('/');
+                window.location.reload();
+            };
+            $scope.end_game = function(){
+                $scope.visible = false;
+               $location.path('/parallax_page/');
+    //            window.location.reload();
+            };
+    }
+
+
+  }
+}]);

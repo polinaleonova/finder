@@ -38,10 +38,20 @@
   position: relative;
   float: left;
 }
+//mini-carousel{
+//  width: 420px;
+//}
 .carousel_ok{
   @include font-base(52px);
   @extend .button-constant;
+  margin: auto;
+  display: block;
+  width: 200px;
 //  float: none;
+}
+.btn_left:focus, .btn_right:focus, .carousel_ok:focus{
+  outline: none;
+  opacity: 0.9;
 }
 .btn_left:hover, .btn_right:hover,
 .carousel_ok:hover{

@@ -1,3 +1,17 @@
-<div ng-colntroller="TwoPlayerController">
-    game filed for two players
+<div ng-controller="TwoPlayersController">
+    <div>
+    <div>Scores:{{first_player.score}}</div>
+    <div>Scores:{{second_player.score}}</div>
+    </div>
+    <div class="field">
+        <div ng-repeat="i in game_field track by $index">
+             <div  class="field_cell"
+                   ng-class="{'show': indexInShowList($index), 'open': indexInOpenList($index)}"
+                  ng-click="openCell($index)">
+                <div ng-if="showCell($index)">
+                    <img class="img_cell" ng-src="{{game_field[$index]}}">
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
