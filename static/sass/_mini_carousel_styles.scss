@@ -1,9 +1,9 @@
 .carousel_wrapper{
-  @include font-base(68px);
+  @include font-base(62px);
   color: $color-font-base;
-  width: 420px;
+  width: 380px;
   margin: auto;
-  height: 100px;
+  height: 80px;
   text-align: center;
 }
 .carousel_btn{
@@ -15,8 +15,8 @@
   margin: auto;
 }
 .carousel_btn:hover{
-  color: #ffffff;
-  background-color: $color-font-base;
+  color: $color-font-hover;
+//  background-color: $color-font-base;
 }
 .btn_left{
   @extend .carousel_btn;
@@ -32,7 +32,7 @@
   position: relative;
 }
 .carousel_selector{
-  width: 320px;
+  width: 280px;
   height: inherit;
   margin: auto;
   position: relative;
