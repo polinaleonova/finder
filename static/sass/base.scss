@@ -3,8 +3,10 @@
 
 
 $font-base-family: 'Flavors', cursive;
-$color-font-base: #1CB3CD;
-$base-background:url("/static/img/back_no_parallax.jpg");
+//$color-font-base: #1CB3CD;
+$color-font-base: #944613;
+$color-font-hover: #592B08;
+$base-background:url("../img/back_no_parallax.jpg");
 @mixin font-base($size) {
   font: $size $font-base-family;
 }
@@ -21,27 +23,32 @@ body{
   margin: auto;
 }
 .font-game{
-    color: $color-font-base;
-    @include font-base(60px);
+//  background-image: url("../img/plate.gif");
+  color: $color-font-base;
+  @include font-base(50px);
   text-align: center;
+  margin-bottom: 20px;
+  margin-top: 0;
+  padding-top: 20px;
 }
 .button-constant{
+  text-align: center;
   border: none;
   min-height: 70px;
   color: $color-font-base;
-  background-color: #ffffff;
+//  background-color: #ffffff;
 
 }
 .button-constant:hover{
   border: none;
-  color: #ffffff;
-  background-color: $color-font-base;
+  color: $color-font-hover;
+//  background-color: $color-font-base;
 
 }
 .bt{
   @extend .button-constant;
   @include font-base(52px);
-  width: 200px;
+  width: 190px;
   float:left;
 }
 .bt:hover{
@@ -52,8 +59,12 @@ body{
   opacity: 0.9;
 }
 .bt_start{
-  @extend .bt;
+  @extend .button-constant;
+  @include font-base(52px);
+  width: 190px;
   margin: auto;
+  top: 25%;
+  position: relative;
 }
 .container_selectors{
       max-width: 420px;
@@ -82,7 +93,7 @@ body{
   top: -70px;
   left: -70px;
 //    background-image: url("/static/img/clover_top_left.gif");
-  background: url("/static/img/clover_top_left.gif");
+  background: url("../img/clover_top_left.gif");
     width: 300px;
     height: 300px;
     z-index: 7;
@@ -94,14 +105,21 @@ body{
   right: -70px;
   float: right;
 //    background-image: url("/static/img/clover_bottom_right.gif");
-  background: url("/static/img/clover_bottom_right.gif") bottom right;
+  background: url("../img/clover_bottom_right.gif") bottom right;
     width: 300px;
     height: 300px;
   z-index: 7;
 }
+.scores{
+      padding-top: 20px;
+    text-align: center;
+}
 .select_game_block{
+  background-image: url("../img/plate.gif");
   position: relative;
   min-width: 300px;
+  height: 320px;
+  padding: 20px 20px;
 //  min-height: 200px;
 }
 #container_layer{
@@ -158,23 +176,15 @@ img{
 .open:hover, .col:hover{
   opacity: 0.8;
 }
-.frame_over_field{
-      pointer-events: none;
-    top: 74px;
-    position: absolute;
-    background-image: url("/static/img/trifolium_2.gif");
-    width: 600px;
-    height: 600px;
-}
 .show{
     background-color: #EBC678;
 }
 .open{
     background-color: #6C7010;
 }
-.scores_style {
-  float: left;
-}
+//.scores_style {
+//  float: left;
+//}
 .field_cell img{
     height: inherit;
 }
@@ -182,21 +192,25 @@ img{
   color: $color-font-base;
   @include font-base(40px);
   position:fixed;
-  border-radius: 18px;
+//  border-radius: 18px;
   left:50%;
   top:50%;
   z-index:100;
-  background:#fff;
-  min-width:400px;
-  max-width:1000px;
-  min-height:200px;
+  background-image: url("../img/plate.gif");
+  background-repeat: no-repeat;
+  height: 360px;
+  width: 420px;
+//  background:#fff;
+//  min-width:400px;
+//  max-width:1000px;
+//  min-height:200px;
 }
 .base_text{
   color: $color-font-base;
   @include font-base(40px);
 }
 .dialog > .w {
-  padding:16px 20px;
+  padding:20px 20px;
   text-align: center;
 
 }
