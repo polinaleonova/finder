@@ -1,8 +1,8 @@
 /* line 1, ../sass/_mini_carousel_styles.scss */
 .carousel_wrapper {
-  font: 62px "Flavors", cursive;
+  font: 3.6vw "Flavors", cursive;
   color: #944613;
-  width: 380px;
+  width: 100%;
   margin: auto;
   height: 80px;
   text-align: center;
@@ -10,7 +10,7 @@
 
 /* line 9, ../sass/_mini_carousel_styles.scss */
 .carousel_btn, .btn_left, .btn_right {
-  width: 50px;
+  width: 10%;
   height: inherit;
   text-align: center;
 }
@@ -44,7 +44,7 @@
 
 /* line 34, ../sass/_mini_carousel_styles.scss */
 .carousel_selector {
-  width: 280px;
+  width: 80%;
   height: inherit;
   margin: auto;
   position: relative;
@@ -53,10 +53,10 @@
 
 /* line 44, ../sass/_mini_carousel_styles.scss */
 .carousel_ok {
-  font: 52px "Flavors", cursive;
+  font: 3.6vw "Flavors", cursive;
   margin: auto;
   display: block;
-  width: 200px;
+  width: 30%;
 }
 
 /* line 52, ../sass/_mini_carousel_styles.scss */

@@ -22,18 +22,18 @@ body{
 }
 .font-game{
   color: $color-font-base;
-  @include font-base(50px);
+  @include font-base(3.6vw);
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   margin-top: 0;
-  padding-top: 20px;
+  padding-top: 0px;
+  line-height: 90%;
 }
 .button-constant{
   text-align: center;
   border: none;
   min-height: 70px;
   color: $color-font-base;
-
 }
 .button-constant:hover{
   border: none;
@@ -41,8 +41,8 @@ body{
 }
 .bt{
   @extend .button-constant;
-  @include font-base(52px);
-  width: 190px;
+  @include font-base(4vw);
+  width: 50%;
   float:left;
 }
 .bt:hover{
@@ -52,21 +52,30 @@ body{
   outline: none;
   opacity: 0.9;
 }
+.bts{
+  margin-top: 70px;
+}
 .bt_start{
   @extend .button-constant;
-  @include font-base(52px);
-  width: 190px;
+  @include font-base(3.6vw);
+  width: 60%;
   margin: auto;
-  top: 25%;
+  top: 0;
   position: relative;
 }
 .container_selectors{
+  width: 25%;
 //  max-width: 420px;
 //  min-width: 200px;
 //  min-height: 200px;
   position: relative;
   top: 200px;
   margin: auto;
+}
+.container_selectors:before{
+  content:"";
+  display: block;
+  padding-top: 100%;
 }
 .frame_over_window{
   position: absolute;
@@ -100,11 +109,23 @@ body{
   text-align: center;
 }
 .select_game_block{
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+//  align-items: center;
+  position: absolute;
+  top:0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 76%;
   background: $dw-background;
-  position: relative;
+  background-size: contain;
+//  position: relative;
+//  width: 100%;
 //  min-width: 300px;
-  height: 320px;
-  padding: 20px 20px;
+//  height: 320px;
+  padding: 25px 25px;
 }
 #container_layer{
   position: absolute;
@@ -169,7 +190,7 @@ img{
 }
 .base_text{
   color: $color-font-base;
-  @include font-base(40px);
+  @include font-base(4vw);
 }
 .dialog > .w {
   padding:20px 20px;

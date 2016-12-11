@@ -1,13 +1,13 @@
 .carousel_wrapper{
-  @include font-base(62px);
+  @include font-base(3.6vw);
   color: $color-font-base;
-  width: 380px;
+  width: 100%;
   margin: auto;
   height: 80px;
   text-align: center;
 }
 .carousel_btn{
-  width: 50px;
+  width: 10%;
   height: inherit;
   text-align: center;
 }
@@ -32,7 +32,7 @@
   position: relative;
 }
 .carousel_selector{
-  width: 280px;
+  width: 80%;
   height: inherit;
   margin: auto;
   position: relative;
@@ -42,11 +42,11 @@
 //  width: 420px;
 //}
 .carousel_ok{
-  @include font-base(52px);
+  @include font-base(3.6vw);
   @extend .button-constant;
   margin: auto;
   display: block;
-  width: 200px;
+  width: 30%;
 //  float: none;
 }
 .btn_left:focus, .btn_right:focus, .carousel_ok:focus{

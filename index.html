@@ -53,40 +53,35 @@
     }
 </script>
 <body ng-controller="StepController">
-    <!--<div class="base_container">-->
-        <div class="container_selectors" ng-switch="steps">
-            <!--<div make-frame></div>-->
-
-            <div class="select_game_block" ng-switch-default="step_1">
-                <div make-frame></div>
-                <p class="font-game">Players</p>
-                <div class="bts">
-                    <div class="bt" ng-click="step_1('one')">
-                     One
-                    </div>
-                    <div class="bt" ng-click="step_1('two')">
-                     Two
-                    </div>
+    <div class="container_selectors" ng-switch="steps" ng-hide="steps=='step_5'">
+        <div class="select_game_block" ng-switch-default="step_1">
+            <div make-frame></div>
+            <p class="font-game">Players</p>
+            <div class="bts">
+                <div class="bt" ng-click="step_1('one')">
+                 One
+                </div>
+                <div class="bt" ng-click="step_1('two')">
+                 Two
                 </div>
             </div>
-            <div class="select_game_block" ng-switch-when="step_2">
-                <div make-frame></div>
-                <p class="font-game">Difficulty Level</p>
-                <mini-carousel selectors="all_levels" lft-btn="" rght-btn="" ok-handler="step_2"/>
-            </div>
-            <div class="select_game_block" ng-switch-when="step_3">
-                <div make-frame></div>
-                <p class="font-game">What will you be looking for?</p>
-                <mini-carousel selectors="all_elements" lft-btn="" rght-btn="" ok-handler="step_3"/>
-            </div>
-            <div class="select_game_block" ng-switch-when="step_4">
-                 <div make-frame></div>
-                <div class="bt_start" ng-click="startgame(players,level,element)">Start >>>-----></div>
-            </div>
-            <div ng-switch-when="step_5">
-                <!--<div ng-view class="container_gamefield"></div>-->
-            </div>
         </div>
+        <div class="select_game_block" ng-switch-when="step_2">
+            <div make-frame></div>
+            <p class="font-game">Difficulty Level</p>
+            <mini-carousel selectors="all_levels" lft-btn="" rght-btn="" ok-handler="step_2"/>
+        </div>
+        <div class="select_game_block" ng-switch-when="step_3">
+            <div make-frame></div>
+            <p class="font-game">What will you be looking for?</p>
+            <mini-carousel selectors="all_elements" lft-btn="" rght-btn="" ok-handler="step_3"/>
+        </div>
+        <div class="select_game_block" ng-switch-when="step_4">
+             <div make-frame></div>
+            <div class="bt_start" ng-click="startgame(players,level,element)">Start <br>>>>-----></div>
+        </div>
+        <div ng-switch-when="step_5"></div>
+    </div>
     <div ng-view class="container_gamefield"></div>
 
     <!--</div>-->
