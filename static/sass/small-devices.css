@@ -1,6 +1,6 @@
 /*
 Error: File to import not found or unreadable: compass.
-        on line 1 of base.scss
+        on line 1 of small-devices.scss
 
 1: @import "compass";
 2: 
@@ -10,7 +10,7 @@ Error: File to import not found or unreadable: compass.
 6: $color-font-hover: #592B08;
 
 Backtrace:
-base.scss:1
+small-devices.scss:1
 /var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/import_node.rb:45:in `import'
 /var/lib/gems/1.9.1/gems/sass-3.4.22/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -53,4 +53,4 @@ base.scss:1
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: compass.\A         on line 1 of base.scss\A \A 1: @import \"compass\";\A 2: \A 3: \A 4: $font-base-family: 'Flavors', cursive;\A 5: $color-font-base: #944613;\A 6: $color-font-hover: #592B08;"; }
+  content: "Error: File to import not found or unreadable: compass.\A         on line 1 of small-devices.scss\A \A 1: @import \"compass\";\A 2: \A 3: \A 4: $font-base-family: 'Flavors', cursive;\A 5: $color-font-base: #944613;\A 6: $color-font-hover: #592B08;"; }

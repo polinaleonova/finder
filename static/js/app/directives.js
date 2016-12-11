@@ -42,7 +42,7 @@ finderDirectives.directive('miniCarousel', function() {
 finderDirectives.directive('makeFrame', function() {
     return {
         restrict: "A",
-        replace: true,
+        replace: false,
         template: '<div><div class="frame_top_left"></div><div class="frame_bottom_right"></div></div>'
     }
 

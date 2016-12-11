@@ -65,31 +65,32 @@
   opacity: 0.9;
 }
 
-/* line 13, ../sass/base.scss */
+/* line 13, ../sass/small-devices.scss */
 body {
   background-image: url("../img/back_no_parallax.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 220%;
+  background-position-x: -600px;
   color: #944613;
-  font: 40px "Flavors", cursive;
+  font: 12vw "Flavors", cursive;
 }
 
-/* line 20, ../sass/base.scss */
+/* line 21, ../sass/small-devices.scss */
 .base_container {
   margin: auto;
 }
 
-/* line 23, ../sass/base.scss */
+/* line 24, ../sass/small-devices.scss */
 .font-game {
   color: #944613;
-  font: 50px "Flavors", cursive;
+  font: 12vw "Flavors", cursive;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   margin-top: 0;
-  padding-top: 20px;
+  line-height: 90%;
 }
 
-/* line 31, ../sass/base.scss */
+/* line 34, ../sass/small-devices.scss */
 .button-constant, .carousel_ok, .bt, .bt:hover, .bt_start {
   text-align: center;
   border: none;
@@ -97,42 +98,50 @@ body {
   color: #944613;
 }
 
-/* line 38, ../sass/base.scss */
+/* line 41, ../sass/small-devices.scss */
 .button-constant:hover, .carousel_ok:hover, .btn_left:hover, .btn_right:hover, .bt:hover, .bt_start:hover {
   border: none;
   color: #592B08;
 }
 
-/* line 42, ../sass/base.scss */
+/* line 45, ../sass/small-devices.scss */
 .bt {
-  font: 52px "Flavors", cursive;
-  width: 190px;
+  font: 14vw "Flavors", cursive;
+  width: 50%;
   float: left;
 }
 
-/* line 51, ../sass/base.scss */
+/* line 54, ../sass/small-devices.scss */
 .bt:focus {
   outline: none;
   opacity: 0.9;
 }
 
-/* line 55, ../sass/base.scss */
+/* line 58, ../sass/small-devices.scss */
 .bt_start {
-  font: 52px "Flavors", cursive;
-  width: 190px;
+  font: 14vw "Flavors", cursive;
+  width: 74%;
   margin: auto;
-  top: 25%;
+  top: 0;
   position: relative;
 }
 
-/* line 63, ../sass/base.scss */
+/* line 67, ../sass/small-devices.scss */
 .container_selectors {
+  width: 80%;
   position: relative;
   top: 200px;
   margin: auto;
 }
 
-/* line 71, ../sass/base.scss */
+/* line 76, ../sass/small-devices.scss */
+.container_selectors:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+/* line 81, ../sass/small-devices.scss */
 .frame_over_window {
   position: absolute;
   pointer-events: none;
@@ -140,7 +149,7 @@ body {
   height: inherit;
 }
 
-/* line 77, ../sass/base.scss */
+/* line 87, ../sass/small-devices.scss */
 .frame_top_left {
   pointer-events: none;
   position: absolute;
@@ -152,7 +161,7 @@ body {
   z-index: 7;
 }
 
-/* line 87, ../sass/base.scss */
+/* line 97, ../sass/small-devices.scss */
 .frame_bottom_right {
   pointer-events: none;
   position: absolute;
@@ -165,35 +174,48 @@ body {
   z-index: 7;
 }
 
-/* line 98, ../sass/base.scss */
+/* line 108, ../sass/small-devices.scss */
 .scores {
   padding-top: 20px;
   text-align: center;
 }
 
-/* line 102, ../sass/base.scss */
+/* line 112, ../sass/small-devices.scss */
 .select_game_block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 82%;
   background: url("../img/plate.gif") no-repeat;
-  position: relative;
-  height: 320px;
-  padding: 20px 20px;
+  background-size: contain;
+  padding: 25px 25px;
 }
 
-/* line 109, ../sass/base.scss */
+/* line 131, ../sass/small-devices.scss */
+.bts {
+  margin-top: 100px;
+}
+
+/* line 134, ../sass/small-devices.scss */
 #container_layer {
   position: absolute;
   overflow: hidden;
   width: 100%;
 }
 
-/* line 114, ../sass/base.scss */
+/* line 139, ../sass/small-devices.scss */
 img {
   width: 100%;
   height: 100%;
   position: absolute;
 }
 
-/* line 119, ../sass/base.scss */
+/* line 144, ../sass/small-devices.scss */
 .container_gamefield {
   background: url("../img/plate.gif") no-repeat;
   background-size: contain;
@@ -203,7 +225,7 @@ img {
   margin: auto;
 }
 
-/* line 127, ../sass/base.scss */
+/* line 152, ../sass/small-devices.scss */
 .field {
   margin: auto;
   margin-top: 10px;
@@ -211,7 +233,7 @@ img {
   width: 432px;
 }
 
-/* line 133, ../sass/base.scss */
+/* line 158, ../sass/small-devices.scss */
 .field_cell {
   margin: 4px;
   height: 100px;
@@ -223,35 +245,35 @@ img {
   float: left;
 }
 
-/* line 143, ../sass/base.scss */
+/* line 168, ../sass/small-devices.scss */
 .field_cell:hover {
   opacity: 0.7;
 }
 
-/* line 146, ../sass/base.scss */
+/* line 171, ../sass/small-devices.scss */
 .open:hover, .col:hover {
   opacity: 0.8;
 }
 
-/* line 149, ../sass/base.scss */
+/* line 174, ../sass/small-devices.scss */
 .show {
   background-color: #EBC678;
 }
 
-/* line 152, ../sass/base.scss */
+/* line 177, ../sass/small-devices.scss */
 .open {
   background-color: #6C7010;
 }
 
-/* line 155, ../sass/base.scss */
+/* line 180, ../sass/small-devices.scss */
 .field_cell img {
   height: inherit;
 }
 
-/* line 158, ../sass/base.scss */
+/* line 183, ../sass/small-devices.scss */
 .dialog {
   color: #944613;
-  font: 40px "Flavors", cursive;
+  font: 12vw "Flavors", cursive;
   position: fixed;
   left: 36.8%;
   top: 100px;
@@ -262,19 +284,19 @@ img {
   width: 420px;
 }
 
-/* line 170, ../sass/base.scss */
+/* line 195, ../sass/small-devices.scss */
 .base_text {
   color: #944613;
-  font: 40px "Flavors", cursive;
+  font: 12vw "Flavors", cursive;
 }
 
-/* line 174, ../sass/base.scss */
+/* line 199, ../sass/small-devices.scss */
 .dialog > .w {
   padding: 20px 20px;
   text-align: center;
 }
 
-/* line 179, ../sass/base.scss */
+/* line 204, ../sass/small-devices.scss */
 .dialog-overlay {
   position: fixed;
   top: 0;
@@ -284,4 +306,26 @@ img {
   background: #000;
   z-index: 90;
   opacity: 0.5;
+}
+
+/* line 214, ../sass/small-devices.scss */
+.carousel_wrapper {
+  font: 12vw "Flavors", cursive;
+  width: 100%;
+  height: 150px;
+}
+
+/* line 219, ../sass/small-devices.scss */
+.carousel_ok {
+  font: 12vw "Flavors", cursive;
+}
+
+/* line 222, ../sass/small-devices.scss */
+.carousel_btn, .btn_left, .btn_right {
+  width: 10%;
+}
+
+/* line 225, ../sass/small-devices.scss */
+.carousel_selector {
+  width: 80%;
 }

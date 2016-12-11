@@ -12,6 +12,7 @@
 	<!--<meta property="og:description" content="Webgame for the little ones">-->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Annie+Use+Your+Telescope|Cabin+Sketch|Flavors|Fontdiner+Swanky|Kranky|Ruge+Boogie" rel="stylesheet">
     <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" media="only screen and (max-device-width:480px)" href="static/css/small-devices.css">
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
@@ -52,34 +53,43 @@
     }
 </script>
 <body ng-controller="StepController">
-    <div class="base_container">
+    <!--<div class="base_container">-->
         <div class="container_selectors" ng-switch="steps">
-            <div make-frame></div>
+            <!--<div make-frame></div>-->
+
             <div class="select_game_block" ng-switch-default="step_1">
+                <div make-frame></div>
                 <p class="font-game">Players</p>
-                <div class="bt" ng-click="step_1('one')">
-                 One
-                </div>
-                <div class="bt" ng-click="step_1('two')">
-                 Two
+                <div class="bts">
+                    <div class="bt" ng-click="step_1('one')">
+                     One
+                    </div>
+                    <div class="bt" ng-click="step_1('two')">
+                     Two
+                    </div>
                 </div>
             </div>
             <div class="select_game_block" ng-switch-when="step_2">
+                <div make-frame></div>
                 <p class="font-game">Difficulty Level</p>
                 <mini-carousel selectors="all_levels" lft-btn="" rght-btn="" ok-handler="step_2"/>
             </div>
             <div class="select_game_block" ng-switch-when="step_3">
+                <div make-frame></div>
                 <p class="font-game">What will you be looking for?</p>
                 <mini-carousel selectors="all_elements" lft-btn="" rght-btn="" ok-handler="step_3"/>
             </div>
             <div class="select_game_block" ng-switch-when="step_4">
+                 <div make-frame></div>
                 <div class="bt_start" ng-click="startgame(players,level,element)">Start >>>-----></div>
             </div>
             <div ng-switch-when="step_5">
-                <div ng-view class="container_gamefield"></div>
+                <!--<div ng-view class="container_gamefield"></div>-->
             </div>
         </div>
-    </div>
+    <div ng-view class="container_gamefield"></div>
+
+    <!--</div>-->
     <script type="text/javascript">
          //for github pages
         document.getElementsByTagName('base')[0].href = document.location.pathname
