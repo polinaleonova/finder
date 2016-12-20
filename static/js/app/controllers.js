@@ -80,9 +80,21 @@ finderControllers.controller('OnePlayerController', ['$scope','$rootScope','$tim
     };
 }]);
 finderControllers.controller('TwoPlayersController', ['$scope', '$timeout', '$dialog', 'share', function($scope, $timeout, $dialog, share) {
-    $scope.first_player = { player : '1 Player', score : 0 };
-    $scope.second_player = { player : '2 Player', score : 0 };
+    $scope.first_player = { player : '1\'st', score : 0 , pl_name : '1'};
+    $scope.second_player = { player : '2\'st', score : 0 , pl_name : '2'};
     $scope.current_player = $scope.first_player;
+    $scope.change_player = false;
+    $scope.showPlayerAnimate = function(){
+        $scope.showPlayerClass = true;
+        $timeout(function() {
+            $scope.showPlayerClass = false;
+//            $scope.change_player = false;
+        }, 1000)
+    };
+    $scope.showPlayerAnimate();
+//    $scope.showPlayerClass = true;
+//    $scope.showPlayerClass = false;
+    $scope.animate_current_player = ''
     $scope.open_list = []; //cells which was opened and will be disabled
     $scope.show_list = []; // cells which was showed and will be checked
     $scope.indexInShowList = function(index){
@@ -94,9 +106,12 @@ finderControllers.controller('TwoPlayersController', ['$scope', '$timeout', '$di
     $scope.showCell = function(index){
             return ($scope.show_list.includes(index) || $scope.open_list.includes(index))
         };
+//    $scope.changePlayer
+
     $scope.changePlayerAndShowCurrent = function(){
         $scope.current_player = ($scope.current_player == $scope.first_player ?
             $scope.second_player : $scope.first_player);
+        $scope.showPlayerAnimate();
     };
     $scope.openCell = function(index){
         if (!$scope.show_list.includes(index) && !$scope.open_list.includes(index)
@@ -126,6 +141,7 @@ finderControllers.controller('TwoPlayersController', ['$scope', '$timeout', '$di
                     $scope.changePlayerAndShowCurrent();
                     $timeout(function () {
                         $scope.show_list = [];
+//                        $scope.changePlayerAndShowCurrent();
                     }, 1000)
                 }
             }

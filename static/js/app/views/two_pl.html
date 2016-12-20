@@ -1,8 +1,9 @@
 <div ng-controller="TwoPlayersController">
+    <div make-frame></div>
     <div>
-    <div class="scores">1'st  |  2'nd</div>
-    <div class="scores">{{first_player.score}}  |  {{second_player.score}}</div>
-        <!--<div>Scores:{{second_player.score}}</div>-->
+        <div class="player_1">{{first_player.player}}</div>
+        <div class="player_2">{{second_player.player}}</div>
+        <div class="scores">{{first_player.score}}  :  {{second_player.score}}</div>
     </div>
     <div class="field">
         <div ng-repeat="i in game_field track by $index">
@@ -15,4 +16,5 @@
             </div>
         </div>
     </div>
+    <div class="show_message_current_player player player_hide" ng-class="{'show_message_current_player':showPlayerClass }">{{current_player.pl_name}}</div>
 </div>

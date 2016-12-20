@@ -27,8 +27,6 @@ body{
   text-align: center;
   margin-bottom: 0px;
   margin-top: 0;
-//  padding: 50px 30px;
-//  padding-top: 20px;
   line-height: 90%;
 }
 .button-constant{
@@ -58,7 +56,6 @@ body{
 .bt_start{
   @extend .button-constant;
   @include font-base(14vw);
-//  width: 190px;
   width: 74%;
   margin: auto;
   top: 0;
@@ -66,9 +63,6 @@ body{
 }
 .container_selectors{
   width: 80%;
-//  max-width: 420px;
-//  min-width: 200px;
-//  min-height: 200px;
   position: relative;
   top: 200px;
   margin: auto;
@@ -106,14 +100,12 @@ body{
   z-index: 7;
 }
 .scores{
-  padding-top: 20px;
-  text-align: center;
+  @include font-base(14vw);
 }
 .select_game_block{
   display: flex;
   flex-direction: column;
   justify-content: center;
-//  align-items: center;
   position: absolute;
   top:0;
   left: 0;
@@ -122,10 +114,6 @@ body{
   height: 82%;
   background: $dw-background;
   background-size: contain;
-//  position: relative;
-//  width: 100%;
-//  min-width: 300px;
-//  height: 320px;
   padding: 25px 25px;
 }
 .bts{
@@ -140,30 +128,6 @@ img{
   width: 100%;
   height: 100%;
   position: absolute;
-}
-.container_gamefield {
-  background: $dw-background;
-  background-size: contain;
-  width: 600px;
-  z-index: 5;
-  position: relative;
-  margin: auto;
-}
-.field {
-  margin: auto;
-  margin-top: 10px;
-  height: 432px;
-  width: 432px;
-}
-.field_cell {
-  margin: 4px;
-  height: 100px;
-  width: 100px;
-  background-color: #542406;
-  opacity: 0.8;
-  border-radius: 9px;
-  position: relative;
-  float: left;
 }
 .field_cell:hover{
   opacity: 0.7;
@@ -181,24 +145,21 @@ img{
     height: inherit;
 }
 .dialog {
-  color: $color-font-base;
-  @include font-base(12vw);
-  position:fixed;
-  left:36.8%;
-  top:100px;
-  z-index:100;
-  background-image: url("../img/plate.gif");
-  background-repeat: no-repeat;
-  height: 360px;
-  width: 420px;
+  width:90%;
+  position: relative;
+  top: 200px;
+  margin: auto;
+}
+.dialog:before{
+  content:"";
+  display: block;
+  padding-top: 100%;
 }
 .base_text{
   color: $color-font-base;
   @include font-base(12vw);
 }
 .dialog > .w {
-  padding:20px 20px;
-  text-align: center;
 
 }
 .dialog-overlay {
@@ -224,4 +185,29 @@ img{
 }
 .carousel_selector{
   width: 80%;
+}
+.container_gamefield{
+  width: 90%;
+}
+.container_gamefield:before{
+  padding-top: 160%;
+}
+.container_gamefield>div{
+  background:url("../img/plate2.gif") no-repeat;
+  background-size: contain;
+}
+.field_wrapper{
+  width:90%
+}
+.field_cell{
+  border-radius: 18px;
+}
+.field{
+  width: 100%;
+  height: 80%;
+}
+.show_message_current_player{
+  left: 20%;
+  width: 60%;
+  font-size: 70vw;
 }

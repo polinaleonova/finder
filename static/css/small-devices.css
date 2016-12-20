@@ -90,7 +90,7 @@ body {
   line-height: 90%;
 }
 
-/* line 34, ../sass/small-devices.scss */
+/* line 32, ../sass/small-devices.scss */
 .button-constant, .carousel_ok, .bt, .bt:hover, .bt_start {
   text-align: center;
   border: none;
@@ -98,26 +98,26 @@ body {
   color: #944613;
 }
 
-/* line 41, ../sass/small-devices.scss */
+/* line 39, ../sass/small-devices.scss */
 .button-constant:hover, .carousel_ok:hover, .btn_left:hover, .btn_right:hover, .bt:hover, .bt_start:hover {
   border: none;
   color: #592B08;
 }
 
-/* line 45, ../sass/small-devices.scss */
+/* line 43, ../sass/small-devices.scss */
 .bt {
   font: 14vw "Flavors", cursive;
   width: 50%;
   float: left;
 }
 
-/* line 54, ../sass/small-devices.scss */
+/* line 52, ../sass/small-devices.scss */
 .bt:focus {
   outline: none;
   opacity: 0.9;
 }
 
-/* line 58, ../sass/small-devices.scss */
+/* line 56, ../sass/small-devices.scss */
 .bt_start {
   font: 14vw "Flavors", cursive;
   width: 74%;
@@ -126,7 +126,7 @@ body {
   position: relative;
 }
 
-/* line 67, ../sass/small-devices.scss */
+/* line 64, ../sass/small-devices.scss */
 .container_selectors {
   width: 80%;
   position: relative;
@@ -134,14 +134,14 @@ body {
   margin: auto;
 }
 
-/* line 76, ../sass/small-devices.scss */
+/* line 70, ../sass/small-devices.scss */
 .container_selectors:before {
   content: "";
   display: block;
   padding-top: 100%;
 }
 
-/* line 81, ../sass/small-devices.scss */
+/* line 75, ../sass/small-devices.scss */
 .frame_over_window {
   position: absolute;
   pointer-events: none;
@@ -149,7 +149,7 @@ body {
   height: inherit;
 }
 
-/* line 87, ../sass/small-devices.scss */
+/* line 81, ../sass/small-devices.scss */
 .frame_top_left {
   pointer-events: none;
   position: absolute;
@@ -161,7 +161,7 @@ body {
   z-index: 7;
 }
 
-/* line 97, ../sass/small-devices.scss */
+/* line 91, ../sass/small-devices.scss */
 .frame_bottom_right {
   pointer-events: none;
   position: absolute;
@@ -174,13 +174,12 @@ body {
   z-index: 7;
 }
 
-/* line 108, ../sass/small-devices.scss */
+/* line 102, ../sass/small-devices.scss */
 .scores {
-  padding-top: 20px;
-  text-align: center;
+  font: 14vw "Flavors", cursive;
 }
 
-/* line 112, ../sass/small-devices.scss */
+/* line 105, ../sass/small-devices.scss */
 .select_game_block {
   display: flex;
   flex-direction: column;
@@ -196,107 +195,72 @@ body {
   padding: 25px 25px;
 }
 
-/* line 131, ../sass/small-devices.scss */
+/* line 119, ../sass/small-devices.scss */
 .bts {
   margin-top: 100px;
 }
 
-/* line 134, ../sass/small-devices.scss */
+/* line 122, ../sass/small-devices.scss */
 #container_layer {
   position: absolute;
   overflow: hidden;
   width: 100%;
 }
 
-/* line 139, ../sass/small-devices.scss */
+/* line 127, ../sass/small-devices.scss */
 img {
   width: 100%;
   height: 100%;
   position: absolute;
 }
 
-/* line 144, ../sass/small-devices.scss */
-.container_gamefield {
-  background: url("../img/plate.gif") no-repeat;
-  background-size: contain;
-  width: 600px;
-  z-index: 5;
-  position: relative;
-  margin: auto;
-}
-
-/* line 152, ../sass/small-devices.scss */
-.field {
-  margin: auto;
-  margin-top: 10px;
-  height: 432px;
-  width: 432px;
-}
-
-/* line 158, ../sass/small-devices.scss */
-.field_cell {
-  margin: 4px;
-  height: 100px;
-  width: 100px;
-  background-color: #542406;
-  opacity: 0.8;
-  border-radius: 9px;
-  position: relative;
-  float: left;
-}
-
-/* line 168, ../sass/small-devices.scss */
+/* line 132, ../sass/small-devices.scss */
 .field_cell:hover {
   opacity: 0.7;
 }
 
-/* line 171, ../sass/small-devices.scss */
+/* line 135, ../sass/small-devices.scss */
 .open:hover, .col:hover {
   opacity: 0.8;
 }
 
-/* line 174, ../sass/small-devices.scss */
+/* line 138, ../sass/small-devices.scss */
 .show {
   background-color: #EBC678;
 }
 
-/* line 177, ../sass/small-devices.scss */
+/* line 141, ../sass/small-devices.scss */
 .open {
   background-color: #6C7010;
 }
 
-/* line 180, ../sass/small-devices.scss */
+/* line 144, ../sass/small-devices.scss */
 .field_cell img {
   height: inherit;
 }
 
-/* line 183, ../sass/small-devices.scss */
+/* line 147, ../sass/small-devices.scss */
 .dialog {
-  color: #944613;
-  font: 12vw "Flavors", cursive;
-  position: fixed;
-  left: 36.8%;
-  top: 100px;
-  z-index: 100;
-  background-image: url("../img/plate.gif");
-  background-repeat: no-repeat;
-  height: 360px;
-  width: 420px;
+  width: 90%;
+  position: relative;
+  top: 200px;
+  margin: auto;
 }
 
-/* line 195, ../sass/small-devices.scss */
+/* line 153, ../sass/small-devices.scss */
+.dialog:before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+
+/* line 158, ../sass/small-devices.scss */
 .base_text {
   color: #944613;
   font: 12vw "Flavors", cursive;
 }
 
-/* line 199, ../sass/small-devices.scss */
-.dialog > .w {
-  padding: 20px 20px;
-  text-align: center;
-}
-
-/* line 204, ../sass/small-devices.scss */
+/* line 165, ../sass/small-devices.scss */
 .dialog-overlay {
   position: fixed;
   top: 0;
@@ -308,24 +272,63 @@ img {
   opacity: 0.5;
 }
 
-/* line 214, ../sass/small-devices.scss */
+/* line 175, ../sass/small-devices.scss */
 .carousel_wrapper {
   font: 12vw "Flavors", cursive;
   width: 100%;
   height: 150px;
 }
 
-/* line 219, ../sass/small-devices.scss */
+/* line 180, ../sass/small-devices.scss */
 .carousel_ok {
   font: 12vw "Flavors", cursive;
 }
 
-/* line 222, ../sass/small-devices.scss */
+/* line 183, ../sass/small-devices.scss */
 .carousel_btn, .btn_left, .btn_right {
   width: 10%;
 }
 
-/* line 225, ../sass/small-devices.scss */
+/* line 186, ../sass/small-devices.scss */
 .carousel_selector {
   width: 80%;
+}
+
+/* line 189, ../sass/small-devices.scss */
+.container_gamefield {
+  width: 90%;
+}
+
+/* line 192, ../sass/small-devices.scss */
+.container_gamefield:before {
+  padding-top: 160%;
+}
+
+/* line 195, ../sass/small-devices.scss */
+.container_gamefield > div {
+  background: url("../img/plate2.gif") no-repeat;
+  background-size: contain;
+}
+
+/* line 199, ../sass/small-devices.scss */
+.field_wrapper {
+  width: 90%;
+}
+
+/* line 202, ../sass/small-devices.scss */
+.field_cell {
+  border-radius: 18px;
+}
+
+/* line 205, ../sass/small-devices.scss */
+.field {
+  width: 100%;
+  height: 80%;
+}
+
+/* line 209, ../sass/small-devices.scss */
+.show_message_current_player {
+  left: 20%;
+  width: 60%;
+  font-size: 70vw;
 }
