@@ -145,22 +145,17 @@ img{
     height: inherit;
 }
 .dialog {
-  width:90%;
-  position: relative;
-  top: 200px;
-  margin: auto;
-}
-.dialog:before{
-  content:"";
-  display: block;
-  padding-top: 100%;
+  width: 80%;
+  height: 44%;
+  left:10%;
+  top:20%;
+  background-size: cover;
 }
 .base_text{
-  color: $color-font-base;
-  @include font-base(12vw);
+  font-size: 12vw;
 }
-.dialog > .w {
-
+.bt_small{
+  @include font-base(10vw);
 }
 .dialog-overlay {
   position:fixed;

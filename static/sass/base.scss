@@ -107,7 +107,7 @@ body{
   text-align: center;
 }
 .select_game_block{
- display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   position: absolute;
@@ -161,11 +161,14 @@ img{
     height: inherit;
 }
 .dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: $color-font-base;
   @include font-base(40px);
   position:fixed;
-  left:36.8%;
-  top:100px;
+  left:38.8%;
+  top:30%;
   z-index:100;
   background-image: url("../img/plate.gif");
   background-repeat: no-repeat;
@@ -174,7 +177,14 @@ img{
 }
 .base_text{
   color: $color-font-base;
-  @include font-base(4vw);
+  font-size: 3.6vw;
+  line-height: 100%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.bt_small{
+  @extend .bt;
+  @include font-base(3vw);
 }
 .dialog > .w {
   padding:20px 20px;

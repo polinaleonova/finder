@@ -91,7 +91,7 @@ body {
 }
 
 /* line 32, ../sass/base.scss */
-.button-constant, .carousel_ok, .bt, .bt:hover, .bt_start {
+.button-constant, .carousel_ok, .bt, .bt_small, .bt:hover, .bt_small:hover, .bt_start {
   text-align: center;
   border: none;
   min-height: 70px;
@@ -99,20 +99,20 @@ body {
 }
 
 /* line 38, ../sass/base.scss */
-.button-constant:hover, .carousel_ok:hover, .btn_left:hover, .btn_right:hover, .bt:hover, .bt_start:hover {
+.button-constant:hover, .carousel_ok:hover, .btn_left:hover, .btn_right:hover, .bt:hover, .bt_small:hover, .bt_start:hover {
   border: none;
   color: #592B08;
 }
 
 /* line 42, ../sass/base.scss */
-.bt {
+.bt, .bt_small {
   font: 4vw "Flavors", cursive;
   width: 50%;
   float: left;
 }
 
 /* line 51, ../sass/base.scss */
-.bt:focus {
+.bt:focus, .bt_small:focus {
   outline: none;
   opacity: 0.9;
 }
@@ -262,11 +262,14 @@ img {
 
 /* line 163, ../sass/base.scss */
 .dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: #944613;
   font: 40px "Flavors", cursive;
   position: fixed;
-  left: 36.8%;
-  top: 100px;
+  left: 38.8%;
+  top: 30%;
   z-index: 100;
   background-image: url("../img/plate.gif");
   background-repeat: no-repeat;
@@ -274,19 +277,27 @@ img {
   width: 420px;
 }
 
-/* line 175, ../sass/base.scss */
+/* line 178, ../sass/base.scss */
 .base_text {
   color: #944613;
-  font: 4vw "Flavors", cursive;
+  font-size: 3.6vw;
+  line-height: 100%;
+  margin: auto;
+  margin-bottom: 30px;
 }
 
-/* line 179, ../sass/base.scss */
+/* line 185, ../sass/base.scss */
+.bt_small {
+  font: 3vw "Flavors", cursive;
+}
+
+/* line 189, ../sass/base.scss */
 .dialog > .w {
   padding: 20px 20px;
   text-align: center;
 }
 
-/* line 184, ../sass/base.scss */
+/* line 194, ../sass/base.scss */
 .dialog-overlay {
   position: fixed;
   top: 0;
@@ -298,7 +309,7 @@ img {
   opacity: 0.5;
 }
 
-/* line 195, ../sass/base.scss */
+/* line 205, ../sass/base.scss */
 .container_gamefield {
   width: 35%;
   position: relative;
@@ -306,14 +317,14 @@ img {
   margin: auto;
 }
 
-/* line 201, ../sass/base.scss */
+/* line 211, ../sass/base.scss */
 .container_gamefield:before {
   content: "";
   display: block;
   padding-top: 100%;
 }
 
-/* line 206, ../sass/base.scss */
+/* line 216, ../sass/base.scss */
 .container_gamefield > div {
   flex-direction: column;
   justify-content: center;
@@ -328,21 +339,21 @@ img {
   padding: 25px 25px;
 }
 
-/* line 219, ../sass/base.scss */
+/* line 229, ../sass/base.scss */
 .field_wrapper {
   width: 70%;
   position: relative;
   margin: auto;
 }
 
-/* line 224, ../sass/base.scss */
+/* line 234, ../sass/base.scss */
 .field_wrapper:before {
   content: "";
   display: block;
   padding-top: 100%;
 }
 
-/* line 229, ../sass/base.scss */
+/* line 239, ../sass/base.scss */
 .field {
   width: 73%;
   margin: auto;
@@ -354,7 +365,7 @@ img {
   height: 86%;
 }
 
-/* line 239, ../sass/base.scss */
+/* line 249, ../sass/base.scss */
 .player {
   color: aqua;
 }
@@ -393,12 +404,12 @@ img {
     -o-transform: scaleY(1) scaleX(1);
   }
 }
-/* line 276, ../sass/base.scss */
+/* line 286, ../sass/base.scss */
 .player_hide {
   display: none;
 }
 
-/* line 279, ../sass/base.scss */
+/* line 289, ../sass/base.scss */
 .show_message_current_player {
   top: 20%;
   left: 35%;
@@ -410,7 +421,7 @@ img {
   animation: show_current_player 1s ease-out;
 }
 
-/* line 289, ../sass/base.scss */
+/* line 299, ../sass/base.scss */
 .player_1 {
   text-align: center;
   padding: 0px 20px;
@@ -418,7 +429,7 @@ img {
   float: left;
 }
 
-/* line 295, ../sass/base.scss */
+/* line 305, ../sass/base.scss */
 .player_2 {
   padding: 0px 20px;
   float: RIGHT;
