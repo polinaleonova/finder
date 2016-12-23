@@ -8,24 +8,25 @@ finderControllers.controller('StepController', ['$scope','$location','$http','$r
             url: 'static/game_data.json'
             }).success(function(data){
             $scope.data = data;
-            $scope.all_elements = Object.keys($scope.data["elements"]);
-            $scope.all_levels = Object.keys($scope.data["levels"]);
+            $scope.all_elements = Object.keys(data["elements"]);
+            $scope.all_levels = Object.keys(data["levels"]);
         });
+
     $scope.dialog_win_content = 'static/templates/dialog_win_content.html';
     $scope.dialog_fail_content = 'static/templates/dialog_fail_content.html';
-    $scope.step_1 = function(p){
-        $scope.players = p;
+    $scope.step_1 = function(number_of_players){
+        $scope.players = number_of_players;
         $scope.steps = 'step_2'
     };
-    $scope.step_2 = function(l){
-        $scope.level = l;
+    $scope.step_2 = function(difficulty){
+        $scope.level = difficulty;
         $scope.steps = 'step_3'
     };
-    $scope.step_3 = function(e){
-        $scope.element = e;
+    $scope.step_3 = function(play_element){
+        $scope.element = play_element;
         $scope.steps = 'step_4'
     };
-    $scope.startgame = function(p, l, e){
+    $scope.startgame = function(){
         $scope.steps = 'step_5';
         var path = '/startgame/'+ $scope.players+'/'+$scope.level+'/'+$scope.element+'/';
         $location.path( path );
@@ -83,18 +84,13 @@ finderControllers.controller('TwoPlayersController', ['$scope', '$timeout', '$di
     $scope.first_player = { player : '1\'st', score : 0 , pl_name : '1'};
     $scope.second_player = { player : '2\'st', score : 0 , pl_name : '2'};
     $scope.current_player = $scope.first_player;
-    $scope.change_player = false;
     $scope.showPlayerAnimate = function(){
         $scope.showPlayerClass = true;
         $timeout(function() {
             $scope.showPlayerClass = false;
-//            $scope.change_player = false;
         }, 1000)
     };
     $scope.showPlayerAnimate();
-//    $scope.showPlayerClass = true;
-//    $scope.showPlayerClass = false;
-    $scope.animate_current_player = ''
     $scope.open_list = []; //cells which was opened and will be disabled
     $scope.show_list = []; // cells which was showed and will be checked
     $scope.indexInShowList = function(index){
@@ -106,8 +102,6 @@ finderControllers.controller('TwoPlayersController', ['$scope', '$timeout', '$di
     $scope.showCell = function(index){
             return ($scope.show_list.includes(index) || $scope.open_list.includes(index))
         };
-//    $scope.changePlayer
-
     $scope.changePlayerAndShowCurrent = function(){
         $scope.current_player = ($scope.current_player == $scope.first_player ?
             $scope.second_player : $scope.first_player);
@@ -141,7 +135,6 @@ finderControllers.controller('TwoPlayersController', ['$scope', '$timeout', '$di
                     $scope.changePlayerAndShowCurrent();
                     $timeout(function () {
                         $scope.show_list = [];
-//                        $scope.changePlayerAndShowCurrent();
                     }, 1000)
                 }
             }

@@ -266,7 +266,7 @@ img{
     -ms-transform: scaleY(0) scaleX(0);
     -o-transform: scaleY(0) scaleX(0);
   }
-  75%{
+  50%{
     opacity: 1;
     transform: scaleY(1) scaleX(1);
     -webkit-transform: scaleY(1) scaleX(1);
@@ -292,7 +292,7 @@ img{
   width: 30%;
   position: absolute;
   display: block;
-  font-size: 14vw;
+  font-size: 16vw;
   text-align: center;
   animation: show_current_player 1s ease-out;
 }

@@ -80,13 +80,11 @@
         </div>
         <div class="select_game_block" ng-switch-when="step_4">
              <div make-frame></div>
-            <div class="bt_start" ng-click="startgame(players,level,element)">Start <br>>>>-----></div>
+            <div class="bt_start" ng-click="startgame()">Start <br>>>>-----></div>
         </div>
         <div ng-switch-when="step_5"></div>
     </div>
     <div ng-view class="container_gamefield"></div>
-
-    <!--</div>-->
     <script type="text/javascript">
          //for github pages
         document.getElementsByTagName('base')[0].href = document.location.pathname
