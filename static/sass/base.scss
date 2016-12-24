@@ -132,8 +132,6 @@ img{
 }
 .field>div{
   float: left;
-  width: 24%;
-  height: 24%;
   margin: 0.5%;
 }
 .field_cell {
@@ -247,7 +245,7 @@ img{
   height: 86%;
 }
 .player{
-  color:aqua;
+  color:#D2F134;
 }
 @keyframes show_current_player{
   0%{
@@ -287,12 +285,12 @@ img{
   display: none;
 }
 .show_message_current_player{
-  top: 20%;
+  top: 8%;
   left: 35%;
   width: 30%;
   position: absolute;
   display: block;
-  font-size: 16vw;
+  font-size: 20vw;
   text-align: center;
   animation: show_current_player 1s ease-out;
 }

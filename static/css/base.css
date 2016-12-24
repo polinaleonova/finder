@@ -219,12 +219,10 @@ img {
 /* line 133, ../sass/base.scss */
 .field > div {
   float: left;
-  width: 24%;
-  height: 24%;
   margin: 0.5%;
 }
 
-/* line 139, ../sass/base.scss */
+/* line 137, ../sass/base.scss */
 .field_cell {
   height: 100%;
   width: 100%;
@@ -235,32 +233,32 @@ img {
   float: left;
 }
 
-/* line 148, ../sass/base.scss */
+/* line 146, ../sass/base.scss */
 .field_cell:hover {
   opacity: 0.7;
 }
 
-/* line 151, ../sass/base.scss */
+/* line 149, ../sass/base.scss */
 .open:hover, .col:hover {
   opacity: 0.8;
 }
 
-/* line 154, ../sass/base.scss */
+/* line 152, ../sass/base.scss */
 .show {
   background-color: #EBC678;
 }
 
-/* line 157, ../sass/base.scss */
+/* line 155, ../sass/base.scss */
 .open {
   background-color: #6C7010;
 }
 
-/* line 160, ../sass/base.scss */
+/* line 158, ../sass/base.scss */
 .field_cell img {
   height: inherit;
 }
 
-/* line 163, ../sass/base.scss */
+/* line 161, ../sass/base.scss */
 .dialog {
   display: flex;
   flex-direction: column;
@@ -277,7 +275,7 @@ img {
   width: 420px;
 }
 
-/* line 178, ../sass/base.scss */
+/* line 176, ../sass/base.scss */
 .base_text {
   color: #944613;
   font-size: 3.6vw;
@@ -286,18 +284,18 @@ img {
   margin-bottom: 30px;
 }
 
-/* line 185, ../sass/base.scss */
+/* line 183, ../sass/base.scss */
 .bt_small {
   font: 3vw "Flavors", cursive;
 }
 
-/* line 189, ../sass/base.scss */
+/* line 187, ../sass/base.scss */
 .dialog > .w {
   padding: 20px 20px;
   text-align: center;
 }
 
-/* line 194, ../sass/base.scss */
+/* line 192, ../sass/base.scss */
 .dialog-overlay {
   position: fixed;
   top: 0;
@@ -309,7 +307,7 @@ img {
   opacity: 0.5;
 }
 
-/* line 205, ../sass/base.scss */
+/* line 203, ../sass/base.scss */
 .container_gamefield {
   width: 35%;
   position: relative;
@@ -317,14 +315,14 @@ img {
   margin: auto;
 }
 
-/* line 211, ../sass/base.scss */
+/* line 209, ../sass/base.scss */
 .container_gamefield:before {
   content: "";
   display: block;
   padding-top: 100%;
 }
 
-/* line 216, ../sass/base.scss */
+/* line 214, ../sass/base.scss */
 .container_gamefield > div {
   flex-direction: column;
   justify-content: center;
@@ -339,21 +337,21 @@ img {
   padding: 25px 25px;
 }
 
-/* line 229, ../sass/base.scss */
+/* line 227, ../sass/base.scss */
 .field_wrapper {
   width: 70%;
   position: relative;
   margin: auto;
 }
 
-/* line 234, ../sass/base.scss */
+/* line 232, ../sass/base.scss */
 .field_wrapper:before {
   content: "";
   display: block;
   padding-top: 100%;
 }
 
-/* line 239, ../sass/base.scss */
+/* line 237, ../sass/base.scss */
 .field {
   width: 73%;
   margin: auto;
@@ -365,9 +363,9 @@ img {
   height: 86%;
 }
 
-/* line 249, ../sass/base.scss */
+/* line 247, ../sass/base.scss */
 .player {
-  color: aqua;
+  color: #D2F134;
 }
 
 @keyframes show_current_player {
@@ -404,24 +402,24 @@ img {
     -o-transform: scaleY(1) scaleX(1);
   }
 }
-/* line 286, ../sass/base.scss */
+/* line 284, ../sass/base.scss */
 .player_hide {
   display: none;
 }
 
-/* line 289, ../sass/base.scss */
+/* line 287, ../sass/base.scss */
 .show_message_current_player {
-  top: 20%;
+  top: 8%;
   left: 35%;
   width: 30%;
   position: absolute;
   display: block;
-  font-size: 16vw;
+  font-size: 20vw;
   text-align: center;
   animation: show_current_player 1s ease-out;
 }
 
-/* line 299, ../sass/base.scss */
+/* line 297, ../sass/base.scss */
 .player_1 {
   text-align: center;
   padding: 0px 20px;
@@ -429,7 +427,7 @@ img {
   float: left;
 }
 
-/* line 305, ../sass/base.scss */
+/* line 303, ../sass/base.scss */
 .player_2 {
   padding: 0px 20px;
   float: RIGHT;

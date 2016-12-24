@@ -33,9 +33,9 @@ finderControllers.controller('StepController', ['$scope','$location','$http','$r
         var elements_list = $scope.data.elements[$scope.element],
             count_elements = $scope.data.levels[$scope.level][0];
         $scope.game_field = doubling_and_shuffle_elements(elements_list, count_elements);
-        share.setScores($scope.data.levels[$scope.level][1])
+        share.setScores($scope.data.levels[$scope.level][1]);
+        $scope.cells_size = 100/(Math.sqrt(count_elements))-1; //for calculation width and height of cells
     };
-    $scope.alertContent={}
     }]);
 finderControllers.controller('OnePlayerController', ['$scope','$rootScope','$timeout','$dialog','share', function($scope,$rootScope,$timeout,$dialog, share) {
     $scope.score = share.score;

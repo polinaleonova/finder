@@ -1,9 +1,8 @@
 <div ng-controller="OnePlayerController">
     <div make-frame></div>
     <div class="scores">Scores:{{score}}</div>
-    <!--<div class="field_wrapper">-->
     <div class="field">
-        <div ng-repeat="i in game_field track by $index">
+        <div ng-repeat="i in game_field track by $index" ng-style="{width: cells_size + '%', height:cells_size + '%' }">
             <div  class="field_cell"
                   ng-class="{'show': indexInShowList($index), 'open': indexInOpenList($index)}"
                   ng-click="openCell($index) ">
@@ -13,5 +12,4 @@
             </div>
         </div>
     </div>
-        <!--</div>-->
 </div>
