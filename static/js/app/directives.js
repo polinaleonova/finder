@@ -2,7 +2,7 @@
 
 var finderDirectives = angular.module('finderDirectives', []);
 
-finderDirectives.directive('miniCarousel', function() {
+finderDirectives.directive('miniCarousel', ['share', function(share) {
 
     return {
         restrict: "E",
@@ -38,7 +38,7 @@ finderDirectives.directive('miniCarousel', function() {
             templateUrl: "static/templates/mini_carousel.html"
     }
 
-});
+}]);
 finderDirectives.directive('makeFrame', function() {
     return {
         restrict: "A",
