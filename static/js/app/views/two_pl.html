@@ -1,20 +1,22 @@
-<div ng-controller="TwoPlayersController">
-    <div make-frame></div>
-    <div>
-        <div class="player_1">{{first_player.player}}</div>
-        <div class="player_2">{{second_player.player}}</div>
-        <div class="scores">{{first_player.score}}  :  {{second_player.score}}</div>
-    </div>
-    <div class="field">
-        <div ng-repeat="i in game_field track by $index" ng-style="{width: cells_size + '%', height:cells_size + '%' }">
-             <div class="field_cell"
-                   ng-class="{'show': indexInShowList($index), 'open': indexInOpenList($index)}"
-                  ng-click="openCell($index)">
-                <div ng-if="showCell($index)">
-                    <img class="img_cell" ng-src="{{game_field[$index]}}">
+<div class="container_gamefield">
+    <div ng-controller="TwoPlayersController">
+        <div make-frame></div>
+        <div>
+            <div class="player_1">{{first_player.player}}</div>
+            <div class="player_2">{{second_player.player}}</div>
+            <div class="scores">{{first_player.score}}  :  {{second_player.score}}</div>
+        </div>
+        <div class="field">
+            <div ng-repeat="i in game_field track by $index" ng-style="{width: cells_size + '%', height:cells_size + '%' }">
+                 <div class="field_cell"
+                       ng-class="{'show': indexInShowList($index), 'open': indexInOpenList($index)}"
+                      ng-click="openCell($index)">
+                    <div ng-if="showCell($index)">
+                        <img class="img_cell" ng-src="{{game_field[$index]}}">
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="show_message_current_player player player_hide" ng-class="{'show_message_current_player':showPlayerClass }">{{current_player.pl_name}}</div>
     </div>
-    <div class="show_message_current_player player player_hide" ng-class="{'show_message_current_player':showPlayerClass }">{{current_player.pl_name}}</div>
 </div>

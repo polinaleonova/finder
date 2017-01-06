@@ -293,38 +293,43 @@ img {
 }
 
 /* line 184, ../sass/small-devices.scss */
+#container_layer {
+  height: 0px;
+}
+
+/* line 187, ../sass/small-devices.scss */
 .container_gamefield {
   width: 90%;
 }
 
-/* line 187, ../sass/small-devices.scss */
+/* line 190, ../sass/small-devices.scss */
 .container_gamefield:before {
   padding-top: 160%;
 }
 
-/* line 190, ../sass/small-devices.scss */
+/* line 193, ../sass/small-devices.scss */
 .container_gamefield > div {
   background: url("../img/plate2.gif") no-repeat;
   background-size: contain;
 }
 
-/* line 194, ../sass/small-devices.scss */
+/* line 197, ../sass/small-devices.scss */
 .field_wrapper {
   width: 90%;
 }
 
-/* line 197, ../sass/small-devices.scss */
+/* line 200, ../sass/small-devices.scss */
 .field_cell {
   border-radius: 18px;
 }
 
-/* line 200, ../sass/small-devices.scss */
+/* line 203, ../sass/small-devices.scss */
 .field {
   width: 100%;
   height: 80%;
 }
 
-/* line 204, ../sass/small-devices.scss */
+/* line 207, ../sass/small-devices.scss */
 .show_message_current_player {
   left: 20%;
   width: 60%;

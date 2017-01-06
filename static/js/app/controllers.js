@@ -1,19 +1,16 @@
 'use strict';
 
 var finderControllers = angular.module('finderControllers',[]);
-finderControllers.controller('StepController', ['$scope','$location','$http','$rootScope','share', function($scope, $location, $http, $rootScope, share){
-    $scope.base_href = document.location.pathname; //for github pages
-    $http({
-            method: 'GET',
-            url: 'static/game_data.json'
-            }).success(function(data){
-            $scope.data = data;
-            $scope.all_elements = Object.keys(data["elements"]);
-            $scope.all_levels = Object.keys(data["levels"]);
-        });
 
+finderControllers.controller('MainController', ['$scope','$location','$http','$rootScope','share', function($scope, $location, $http, $rootScope, share){
+    share.getData();
+    $scope.base_href = document.location.pathname; //for github pages
     $scope.dialog_win_content = 'static/templates/dialog_win_content.html';
     $scope.dialog_fail_content = 'static/templates/dialog_fail_content.html';
+    }]);
+finderControllers.controller('StepController', ['$scope','$location','$http','$rootScope','share', function($scope, $location, $http, $rootScope, share){
+    $scope.all_levels = share.all_levels;
+    $scope.all_elements = share.all_elements;
     $scope.step_1 = function(number_of_players){
         $scope.players = number_of_players;
         $scope.steps = 'step_2'
@@ -26,19 +23,16 @@ finderControllers.controller('StepController', ['$scope','$location','$http','$r
         $scope.element = play_element;
         $scope.steps = 'step_4'
     };
+
     $scope.startgame = function(){
-        $scope.steps = 'step_5';
-        var path = '/startgame/'+ $scope.players+'/'+$scope.level+'/'+$scope.element+'/';
-        $location.path( path );
-        var elements_list = $scope.data.elements[$scope.element],
-            count_elements = $scope.data.levels[$scope.level][0];
-        $scope.game_field = doubling_and_shuffle_elements(elements_list, count_elements);
-        share.setScores($scope.data.levels[$scope.level][1]);
-        $scope.cells_size = 100/(Math.sqrt(count_elements))-1; //for calculation width and height of cells
+        share.setGameParameters($scope.players, $scope.level, $scope.element);
+        share.startNewGame();
     };
-    }]);
+}]);
 finderControllers.controller('OnePlayerController', ['$scope','$rootScope','$timeout','$dialog','share', function($scope,$rootScope,$timeout,$dialog, share) {
+    $scope.cells_size = share.cells_size;
     $scope.score = share.score;
+    $scope.game_field = share.getGameList();
     $scope.subtractScore = share.subtractScore;
     $scope.open_list = []; //cells which was opened and will be disabled
     $scope.show_list = []; // cells which was showed and will be checked
@@ -81,6 +75,8 @@ finderControllers.controller('OnePlayerController', ['$scope','$rootScope','$tim
     };
 }]);
 finderControllers.controller('TwoPlayersController', ['$scope', '$timeout', '$dialog', 'share', function($scope, $timeout, $dialog, share) {
+    $scope.cells_size = share.cells_size;
+    $scope.game_field = share.getGameList();
     $scope.first_player = { player : '1\'st', score : 0 , pl_name : '1'};
     $scope.second_player = { player : '2\'st', score : 0 , pl_name : '2'};
     $scope.current_player = $scope.first_player;
@@ -147,11 +143,9 @@ finderControllers.controller('ParallaxController', ['$scope', function($scope) {
     $scope.change_x = function(e){
         tempX = e.pageX;
         tempY = e.pageY;
-        document.getElementById('layer1').style.left =tempX*(-0.03)+'px';
-        document.getElementById('layer1').style.top =tempY*(-0.03)+'px';
-        document.getElementById('layer2').style.left =tempX*(-0.06)+'px';
-        document.getElementById('layer2').style.top =tempY*(-0.06)+'px';
-        document.getElementById('layer3').style.left =tempX*(-0.2)+'px';
-        document.getElementById('layer3').style.top =tempY*(-0.2)+'px';
+        document.getElementById('img_layer2').style.left =tempX*(-0.06)+'px';
+        document.getElementById('img_layer2').style.top =tempY*(-0.06)+'px';
+        document.getElementById('img_layer3').style.left =tempX*(-0.2)+'px';
+        document.getElementById('img_layer3').style.top =tempY*(-0.2)+'px';
     };
 }]);

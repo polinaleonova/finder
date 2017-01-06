@@ -2,7 +2,7 @@
 
 var finderDirectives = angular.module('finderDirectives', []);
 
-finderDirectives.directive('miniCarousel', function() {
+finderDirectives.directive('miniCarousel', ['share', function(share) {
 
     return {
         restrict: "E",
@@ -37,8 +37,8 @@ finderDirectives.directive('miniCarousel', function() {
         },
             templateUrl: "static/templates/mini_carousel.html"
     }
+}]);
 
-});
 finderDirectives.directive('makeFrame', function() {
     return {
         restrict: "A",
@@ -48,7 +48,7 @@ finderDirectives.directive('makeFrame', function() {
 
 });
 
-finderDirectives.directive('dialogWindow',['$timeout', '$compile','$location', 'share', function($timeout, $compile, $location, share) {
+finderDirectives.directive('dialogWindow',['$timeout', '$compile','$location', 'share', '$route', function($timeout, $compile, $location, share, $route) {
     return {
         restrict: 'A',
         scope: true,
@@ -62,16 +62,13 @@ finderDirectives.directive('dialogWindow',['$timeout', '$compile','$location', '
             $compile($scope.$overlay)($scope);
             $scope.set_to_start = function(){
                 $scope.visible = false;
-                $location.path('/');
-                window.location.reload();
+                share.startNewGame();
+                $route.reload();
             };
             $scope.end_game = function(){
                 $scope.visible = false;
-               $location.path('/parallax_page/');
-    //            window.location.reload();
+               $location.path('/');
             };
+        }
     }
-
-
-  }
 }]);

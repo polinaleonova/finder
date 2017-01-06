@@ -1,13 +1,15 @@
-<div ng-controller="OnePlayerController">
-    <div make-frame></div>
-    <div class="scores">Scores:{{score}}</div>
-    <div class="field">
-        <div ng-repeat="i in game_field track by $index" ng-style="{width: cells_size + '%', height:cells_size + '%' }">
-            <div  class="field_cell"
-                  ng-class="{'show': indexInShowList($index), 'open': indexInOpenList($index)}"
-                  ng-click="openCell($index) ">
-                <div ng-if="showCell($index)">
-                    <img class="img_cell" ng-src="{{game_field[$index]}}">
+<div class="container_gamefield">
+    <div ng-controller="OnePlayerController">
+        <div make-frame></div>
+        <div class="scores">Scores:{{score}}</div>
+        <div class="field">
+            <div ng-repeat="i in game_field track by $index" ng-style="{width: cells_size + '%', height:cells_size + '%' }">
+                <div  class="field_cell"
+                      ng-class="{'show': indexInShowList($index), 'open': indexInOpenList($index)}"
+                      ng-click="openCell($index) ">
+                    <div ng-if="showCell($index)">
+                        <img class="img_cell" ng-src="{{game_field[$index]}}">
+                    </div>
                 </div>
             </div>
         </div>
