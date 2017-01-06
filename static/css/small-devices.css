@@ -335,3 +335,9 @@ img {
   width: 60%;
   font-size: 100vw;
 }
+
+/* line 212, ../sass/small-devices.scss */
+.home_bt {
+  width: 50%;
+  font-size: 20vw;
+}
