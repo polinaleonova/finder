@@ -8,12 +8,7 @@ finderControllers.controller('MainController', ['$scope','$location','$http','$r
     $scope.dialog_win_content = 'static/templates/dialog_win_content.html';
     $scope.dialog_fail_content = 'static/templates/dialog_fail_content.html';
     }]);
-
-
 finderControllers.controller('StepController', ['$scope','$location','$http','$rootScope','share', function($scope, $location, $http, $rootScope, share){
-    $scope.base_href = document.location.pathname; //for github pages
-    $scope.dialog_win_content = 'static/templates/dialog_win_content.html';
-    $scope.dialog_fail_content = 'static/templates/dialog_fail_content.html';
     $scope.all_levels = share.all_levels;
     $scope.all_elements = share.all_elements;
     $scope.step_1 = function(number_of_players){
@@ -28,15 +23,14 @@ finderControllers.controller('StepController', ['$scope','$location','$http','$r
         $scope.element = play_element;
         $scope.steps = 'step_4'
     };
+
     $scope.startgame = function(){
-        $scope.steps = 'step_5';
-        var path = '/startgame/'+ $scope.players+'/'+$scope.level+'/'+$scope.element+'/';
-        $location.path( path );
-        share.setGameParametrs($scope.players, $scope.level, $scope.element)
+        share.setGameParameters($scope.players, $scope.level, $scope.element);
+        share.startNewGame();
     };
-    }]);
+}]);
 finderControllers.controller('OnePlayerController', ['$scope','$rootScope','$timeout','$dialog','share', function($scope,$rootScope,$timeout,$dialog, share) {
-    $scope.cells_size = share.cells_size
+    $scope.cells_size = share.cells_size;
     $scope.score = share.score;
     $scope.game_field = share.getGameList();
     $scope.subtractScore = share.subtractScore;
@@ -149,11 +143,9 @@ finderControllers.controller('ParallaxController', ['$scope', function($scope) {
     $scope.change_x = function(e){
         tempX = e.pageX;
         tempY = e.pageY;
-//        document.getElementById('layer1').style.left =tempX*(-0.03)+'px';
-//        document.getElementById('layer1').style.top =tempY*(-0.03)+'px';
-        document.getElementById('layer2').style.left =tempX*(-0.06)+'px';
-        document.getElementById('layer2').style.top =tempY*(-0.06)+'px';
-        document.getElementById('layer3').style.left =tempX*(-0.2)+'px';
-        document.getElementById('layer3').style.top =tempY*(-0.2)+'px';
+        document.getElementById('img_layer2').style.left =tempX*(-0.06)+'px';
+        document.getElementById('img_layer2').style.top =tempY*(-0.06)+'px';
+        document.getElementById('img_layer3').style.left =tempX*(-0.2)+'px';
+        document.getElementById('img_layer3').style.top =tempY*(-0.2)+'px';
     };
 }]);

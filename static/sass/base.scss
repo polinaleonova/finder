@@ -11,11 +11,13 @@ $dw-background:url("../img/plate.gif") no-repeat;
 }
 @import "mini_carousel_styles";
 body{
+  -webkit-text-stroke: 1px black;
+  overflow: hidden;
   background-image: $base-background;
   background-repeat: no-repeat;
   background-size: 100%;
-    color: $color-font-base;
-   @include font-base(40px);
+  color: $color-font-base;
+  @include font-base(40px);
 }
 .base_container{
   margin: auto;
@@ -123,18 +125,35 @@ body{
 #container_layer{
   position: absolute;
   overflow: hidden;
-  width: 100%;
+  width: 110%;
+  height: 110%;
 }
-img{
+#container_layer div{
   width: 100%;
   height: 100%;
   position: absolute;
+}
+#img_layer1{
+  background-image: url("../img/art-back.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#img_layer2{
+  background-image: url("../img/art-tree.gif");
+  background-repeat: no-repeat;
+  background-size: calc(100% + 50px);
+}
+#img_layer3{
+  background-image: url("../img/art-boat.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .field>div{
   float: left;
   margin: 0.5%;
 }
 .field_cell {
+  @include box-shadow(3px 3px black);
   height: 100%;
   width: 100%;
   background-color: #542406;
@@ -146,7 +165,7 @@ img{
 .field_cell:hover{
   opacity: 0.7;
 }
-.open:hover, .col:hover{
+.field_cell.open:hover {
   opacity: 0.8;
 }
 .show{
@@ -199,7 +218,6 @@ img{
   z-index:90;
   opacity:0.5;
 }
-
 .container_gamefield{
   width: 35%;
   position: relative;
@@ -249,36 +267,20 @@ img{
 }
 @keyframes show_current_player{
   0%{
-    transform: scaleY(0) scaleX(0);
-    -webkit-transform: scaleY(0) scaleX(0);
-    -moz-transform: scaleY(0) scaleX(0);
-    -ms-transform: scaleY(0) scaleX(0);
-    -o-transform: scaleY(0) scaleX(0);
+    @include transform(scaleY(0) scaleX(0));
     opacity: 0;
   }
   25%{
     opacity: 0;
-    transform: scaleY(0) scaleX(0);
-    -webkit-transform: scaleY(0) scaleX(0);
-    -moz-transform: scaleY(0) scaleX(0);
-    -ms-transform: scaleY(0) scaleX(0);
-    -o-transform: scaleY(0) scaleX(0);
+    @include transform(scaleY(0) scaleX(0));
   }
   50%{
     opacity: 1;
-    transform: scaleY(1) scaleX(1);
-    -webkit-transform: scaleY(1) scaleX(1);
-    -moz-transform: scaleY(1) scaleX(1);
-    -ms-transform: scaleY(1) scaleX(1);
-    -o-transform: scaleY(1) scaleX(1);
+    @include transform(scaleY(1) scaleX(1));
   }
   100%{
     opacity: 0;
-    transform: scaleY(1) scaleX(1);
-    -webkit-transform: scaleY(1) scaleX(1);
-    -moz-transform: scaleY(1) scaleX(1);
-    -ms-transform: scaleY(1) scaleX(1);
-    -o-transform: scaleY(1) scaleX(1);
+    @include transform(scaleY(1) scaleX(1));
   }
 }
 .player_hide{
@@ -305,4 +307,51 @@ img{
   float: RIGHT;
   width: 30%;
   text-align: center;
+}
+.fade{
+  height: 0px;
+}
+.fade.ng-enter,
+.fade.ng-leave {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.fade.ng-enter {
+  opacity: 0;
+}
+.fade.ng-enter-active {
+  opacity: 1;
+}
+.fade.ng-leave {
+  opacity: 1;
+}
+.fade.ng-leave-active {
+  opacity: 0;
+}
+.contain_home_bt{
+  pointer-events: none;
+  z-index: 4;
+  position: absolute;
+  top: 40%;
+  width: 100%;
+}
+.home_bt{
+  pointer-events: all;
+  -webkit-text-stroke: 2px black;
+  text-shadow: 5px 6px 0 #0f2520;
+  display: block;
+  width: 25%;
+  margin: auto;
+  color: #EBC678;
+  font-size: 9vw;
+  text-decoration: none;
+}
+.home_bt:hover{
+  -webkit-text-stroke: 2px black;
+   color: $color-font-base;
+}
+img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }

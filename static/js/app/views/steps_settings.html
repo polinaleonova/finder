@@ -1,5 +1,5 @@
 <div ng-controller="StepController">
-    <div class="container_selectors" ng-switch="steps" ng-hide="steps=='step_5'">
+    <div class="container_selectors" ng-switch="steps">
         <div class="select_game_block" ng-switch-default="step_1">
             <div make-frame></div>
             <p class="font-game">Players</p>
@@ -26,6 +26,5 @@
              <div make-frame></div>
             <div class="bt_start" ng-click="startgame()">Start <br>>>>-----></div>
         </div>
-        <div ng-switch-when="step_5"></div>
     </div>
 </div>
