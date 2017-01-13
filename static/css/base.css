@@ -65,7 +65,7 @@
   opacity: 0.9;
 }
 
-/* line 13, ../sass/base.scss */
+/* line 14, ../sass/base.scss */
 body {
   -webkit-text-stroke: 1px black;
   overflow: hidden;
@@ -76,12 +76,17 @@ body {
   font: 40px "Flavors", cursive;
 }
 
-/* line 22, ../sass/base.scss */
+/* line 23, ../sass/base.scss */
 .base_container {
   margin: auto;
 }
 
-/* line 25, ../sass/base.scss */
+/* line 26, ../sass/base.scss */
+html, a {
+  cursor: url("../img/cursor_arr.png"), auto;
+}
+
+/* line 29, ../sass/base.scss */
 .font-game {
   color: #944613;
   font: 3.6vw "Flavors", cursive;
@@ -92,7 +97,7 @@ body {
   line-height: 90%;
 }
 
-/* line 34, ../sass/base.scss */
+/* line 38, ../sass/base.scss */
 .button-constant, .carousel_ok, .bt, .bt_small, .bt:hover, .bt_small:hover, .bt_start {
   text-align: center;
   border: none;
@@ -100,31 +105,31 @@ body {
   color: #944613;
 }
 
-/* line 40, ../sass/base.scss */
+/* line 44, ../sass/base.scss */
 .button-constant:hover, .carousel_ok:hover, .btn_left:hover, .btn_right:hover, .bt:hover, .bt_small:hover, .bt_start:hover {
   border: none;
   color: #592B08;
 }
 
-/* line 44, ../sass/base.scss */
+/* line 48, ../sass/base.scss */
 .bt, .bt_small {
   font: 4vw "Flavors", cursive;
   width: 50%;
   float: left;
 }
 
-/* line 53, ../sass/base.scss */
+/* line 57, ../sass/base.scss */
 .bt:focus, .bt_small:focus {
   outline: none;
   opacity: 0.9;
 }
 
-/* line 57, ../sass/base.scss */
+/* line 61, ../sass/base.scss */
 .bts {
   margin-top: 70px;
 }
 
-/* line 60, ../sass/base.scss */
+/* line 64, ../sass/base.scss */
 .bt_start {
   font: 3.6vw "Flavors", cursive;
   width: 60%;
@@ -133,7 +138,7 @@ body {
   position: relative;
 }
 
-/* line 68, ../sass/base.scss */
+/* line 72, ../sass/base.scss */
 .container_selectors {
   width: 25%;
   position: relative;
@@ -141,14 +146,14 @@ body {
   margin: auto;
 }
 
-/* line 74, ../sass/base.scss */
+/* line 78, ../sass/base.scss */
 .container_selectors:before {
   content: "";
   display: block;
   padding-top: 100%;
 }
 
-/* line 79, ../sass/base.scss */
+/* line 83, ../sass/base.scss */
 .frame_over_window {
   position: absolute;
   pointer-events: none;
@@ -156,7 +161,7 @@ body {
   height: inherit;
 }
 
-/* line 85, ../sass/base.scss */
+/* line 89, ../sass/base.scss */
 .frame_top_left {
   pointer-events: none;
   position: absolute;
@@ -168,7 +173,7 @@ body {
   z-index: 7;
 }
 
-/* line 95, ../sass/base.scss */
+/* line 99, ../sass/base.scss */
 .frame_bottom_right {
   pointer-events: none;
   position: absolute;
@@ -181,14 +186,14 @@ body {
   z-index: 7;
 }
 
-/* line 106, ../sass/base.scss */
+/* line 110, ../sass/base.scss */
 .scores {
   font: 3vw "Flavors", cursive;
   color: #007983;
   text-align: center;
 }
 
-/* line 111, ../sass/base.scss */
+/* line 115, ../sass/base.scss */
 .select_game_block {
   display: flex;
   flex-direction: column;
@@ -204,7 +209,7 @@ body {
   padding: 25px 25px;
 }
 
-/* line 125, ../sass/base.scss */
+/* line 129, ../sass/base.scss */
 #container_layer {
   position: absolute;
   overflow: hidden;
@@ -212,41 +217,41 @@ body {
   height: 110%;
 }
 
-/* line 131, ../sass/base.scss */
+/* line 135, ../sass/base.scss */
 #container_layer div {
   width: 100%;
   height: 100%;
   position: absolute;
 }
 
-/* line 136, ../sass/base.scss */
+/* line 140, ../sass/base.scss */
 #img_layer1 {
   background-image: url("../img/art-back.gif");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* line 141, ../sass/base.scss */
+/* line 145, ../sass/base.scss */
 #img_layer2 {
   background-image: url("../img/art-tree.gif");
   background-repeat: no-repeat;
   background-size: calc(100% + 50px);
 }
 
-/* line 146, ../sass/base.scss */
+/* line 150, ../sass/base.scss */
 #img_layer3 {
   background-image: url("../img/art-boat.gif");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* line 151, ../sass/base.scss */
+/* line 155, ../sass/base.scss */
 .field > div {
   float: left;
   margin: 0.5%;
 }
 
-/* line 155, ../sass/base.scss */
+/* line 159, ../sass/base.scss */
 .field_cell {
   -moz-box-shadow: 3px 3px black;
   -webkit-box-shadow: 3px 3px black;
@@ -260,32 +265,32 @@ body {
   float: left;
 }
 
-/* line 165, ../sass/base.scss */
+/* line 169, ../sass/base.scss */
 .field_cell:hover {
   opacity: 0.7;
 }
 
-/* line 168, ../sass/base.scss */
+/* line 172, ../sass/base.scss */
 .field_cell.open:hover {
   opacity: 0.8;
 }
 
-/* line 171, ../sass/base.scss */
+/* line 175, ../sass/base.scss */
 .show {
   background-color: #EBC678;
 }
 
-/* line 174, ../sass/base.scss */
+/* line 178, ../sass/base.scss */
 .open {
   background-color: #6C7010;
 }
 
-/* line 177, ../sass/base.scss */
+/* line 181, ../sass/base.scss */
 .field_cell img {
   height: inherit;
 }
 
-/* line 180, ../sass/base.scss */
+/* line 184, ../sass/base.scss */
 .dialog {
   display: flex;
   flex-direction: column;
@@ -302,7 +307,7 @@ body {
   width: 420px;
 }
 
-/* line 195, ../sass/base.scss */
+/* line 199, ../sass/base.scss */
 .base_text {
   color: #944613;
   font-size: 3.6vw;
@@ -311,18 +316,18 @@ body {
   margin-bottom: 30px;
 }
 
-/* line 202, ../sass/base.scss */
+/* line 206, ../sass/base.scss */
 .bt_small {
   font: 3vw "Flavors", cursive;
 }
 
-/* line 206, ../sass/base.scss */
+/* line 210, ../sass/base.scss */
 .dialog > .w {
   padding: 20px 20px;
   text-align: center;
 }
 
-/* line 211, ../sass/base.scss */
+/* line 215, ../sass/base.scss */
 .dialog-overlay {
   position: fixed;
   top: 0;
@@ -334,7 +339,7 @@ body {
   opacity: 0.5;
 }
 
-/* line 221, ../sass/base.scss */
+/* line 225, ../sass/base.scss */
 .container_gamefield {
   width: 35%;
   position: relative;
@@ -342,14 +347,14 @@ body {
   margin: auto;
 }
 
-/* line 227, ../sass/base.scss */
+/* line 231, ../sass/base.scss */
 .container_gamefield:before {
   content: "";
   display: block;
   padding-top: 100%;
 }
 
-/* line 232, ../sass/base.scss */
+/* line 236, ../sass/base.scss */
 .container_gamefield > div {
   flex-direction: column;
   justify-content: center;
@@ -364,21 +369,21 @@ body {
   padding: 25px 25px;
 }
 
-/* line 245, ../sass/base.scss */
+/* line 249, ../sass/base.scss */
 .field_wrapper {
   width: 70%;
   position: relative;
   margin: auto;
 }
 
-/* line 250, ../sass/base.scss */
+/* line 254, ../sass/base.scss */
 .field_wrapper:before {
   content: "";
   display: block;
   padding-top: 100%;
 }
 
-/* line 255, ../sass/base.scss */
+/* line 259, ../sass/base.scss */
 .field {
   width: 73%;
   margin: auto;
@@ -390,7 +395,7 @@ body {
   height: 86%;
 }
 
-/* line 265, ../sass/base.scss */
+/* line 269, ../sass/base.scss */
 .player {
   color: #D2F134;
 }
@@ -425,12 +430,12 @@ body {
     transform: scaleY(1) scaleX(1);
   }
 }
-/* line 286, ../sass/base.scss */
+/* line 290, ../sass/base.scss */
 .player_hide {
   display: none;
 }
 
-/* line 289, ../sass/base.scss */
+/* line 293, ../sass/base.scss */
 .show_message_current_player {
   top: 8%;
   left: 35%;
@@ -442,7 +447,7 @@ body {
   animation: show_current_player 1s ease-out;
 }
 
-/* line 299, ../sass/base.scss */
+/* line 303, ../sass/base.scss */
 .player_1 {
   text-align: center;
   padding: 0px 20px;
@@ -450,7 +455,7 @@ body {
   float: left;
 }
 
-/* line 305, ../sass/base.scss */
+/* line 309, ../sass/base.scss */
 .player_2 {
   padding: 0px 20px;
   float: RIGHT;
@@ -458,39 +463,39 @@ body {
   text-align: center;
 }
 
-/* line 311, ../sass/base.scss */
+/* line 315, ../sass/base.scss */
 .fade {
   height: 0px;
 }
 
-/* line 314, ../sass/base.scss */
+/* line 318, ../sass/base.scss */
 .fade.ng-enter,
 .fade.ng-leave {
   -webkit-transition: all 1s ease;
   transition: all 1s ease;
 }
 
-/* line 319, ../sass/base.scss */
+/* line 323, ../sass/base.scss */
 .fade.ng-enter {
   opacity: 0;
 }
 
-/* line 322, ../sass/base.scss */
+/* line 326, ../sass/base.scss */
 .fade.ng-enter-active {
   opacity: 1;
 }
 
-/* line 325, ../sass/base.scss */
+/* line 329, ../sass/base.scss */
 .fade.ng-leave {
   opacity: 1;
 }
 
-/* line 328, ../sass/base.scss */
+/* line 332, ../sass/base.scss */
 .fade.ng-leave-active {
   opacity: 0;
 }
 
-/* line 331, ../sass/base.scss */
+/* line 335, ../sass/base.scss */
 .contain_home_bt {
   pointer-events: none;
   z-index: 4;
@@ -499,7 +504,7 @@ body {
   width: 100%;
 }
 
-/* line 338, ../sass/base.scss */
+/* line 342, ../sass/base.scss */
 .home_bt {
   pointer-events: all;
   -webkit-text-stroke: 2px black;
@@ -512,13 +517,13 @@ body {
   text-decoration: none;
 }
 
-/* line 349, ../sass/base.scss */
+/* line 353, ../sass/base.scss */
 .home_bt:hover {
   -webkit-text-stroke: 2px black;
   color: #944613;
 }
 
-/* line 353, ../sass/base.scss */
+/* line 357, ../sass/base.scss */
 img {
   width: 100%;
   height: 100%;

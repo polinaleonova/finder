@@ -6,6 +6,7 @@ $color-font-base: #944613;
 $color-font-hover: #592B08;
 $base-background:url("../img/back_no_parallax.jpg");
 $dw-background:url("../img/plate.gif") no-repeat;
+$main_cursor: url('../img/cursor_arr.png'), auto;
 @mixin font-base($size) {
   font: $size $font-base-family;
 }
@@ -21,6 +22,9 @@ body{
 }
 .base_container{
   margin: auto;
+}
+html, a{
+  cursor: $main_cursor;
 }
 .font-game{
   color: $color-font-base;
