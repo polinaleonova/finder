@@ -3,7 +3,6 @@
 var finderDirectives = angular.module('finderDirectives', []);
 
 finderDirectives.directive('miniCarousel', ['share', function(share) {
-
     return {
         restrict: "E",
         scope: {selectorsCarousel: "=selectors",

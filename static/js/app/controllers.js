@@ -9,23 +9,24 @@ finderControllers.controller('MainController', ['$scope','$location','$http','$r
     $scope.dialog_fail_content = 'static/templates/dialog_fail_content.html';
     }]);
 finderControllers.controller('StepController', ['$scope','$location','$http','$rootScope','share', function($scope, $location, $http, $rootScope, share){
-    $scope.all_levels = share.all_levels;
     $scope.all_elements = share.all_elements;
     $scope.step_1 = function(number_of_players){
         $scope.players = number_of_players;
-        $scope.steps = 'step_2'
+        share.setPlayers($scope.players);
+        $scope.all_levels = share.all_levels;
+        $scope.steps = 'step_2';
     };
     $scope.step_2 = function(difficulty){
         $scope.level = difficulty;
-        $scope.steps = 'step_3'
+        share.setDifficultyLevel($scope.level);
+        $scope.steps = 'step_3';
     };
     $scope.step_3 = function(play_element){
         $scope.element = play_element;
+        share.setElement($scope.element);
         $scope.steps = 'step_4'
     };
-
     $scope.startgame = function(){
-        share.setGameParameters($scope.players, $scope.level, $scope.element);
         share.startNewGame();
     };
 }]);

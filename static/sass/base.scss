@@ -23,7 +23,13 @@ body{
 .base_container{
   margin: auto;
 }
-html, a{
+html{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: $main_cursor;
+}
+a{
   cursor: $main_cursor;
 }
 .font-game{
@@ -303,13 +309,13 @@ html, a{
 .player_1{
   text-align: center;
   padding: 0px 20px;
-  width: 30%;
+  width: 20%;
   float: left;
 }
 .player_2{
   padding: 0px 20px;
   float: RIGHT;
-  width: 30%;
+  width: 20%;
   text-align: center;
 }
 .fade{
