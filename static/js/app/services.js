@@ -13,20 +13,23 @@ finderServices.factory('share', function($http, $location){
         $http(request).then(function (resp) {
             game_data = resp.data;
             share_data.all_elements = Object.keys(game_data["elements"]);
-            share_data.all_levels = Object.keys(game_data["levels"]);
-
         });
     };
-    share_data.setGameParameters = function (players, selected_difficulty_level, selected_element) {
+    share_data.setPlayers = function (players) {
         share_data.players = players;
+        share_data.all_levels = Object.keys(game_data["levels"][players]);
+        };
+    share_data.setDifficultyLevel = function (selected_difficulty_level) {
         share_data.selected_difficulty_level = selected_difficulty_level;
-        share_data.selected_element = selected_element
+        };
+    share_data.setElement = function (selected_element) {
+        share_data.selected_element = selected_element;
         };
     share_data.startNewGame = function(){
         var elements_list = game_data.elements[share_data.selected_element],
-                count_elements = game_data.levels[share_data.selected_difficulty_level][0];
+            count_elements = game_data["levels"][share_data.players][share_data.selected_difficulty_level][0];
             share_data.game_field = doubling_and_shuffle_elements(elements_list, count_elements);
-            share_data.score = game_data.levels[share_data.selected_difficulty_level][1];
+            share_data.score = game_data["levels"][share_data.players][share_data.selected_difficulty_level][1];
             share_data.cells_size = 100/(Math.sqrt(count_elements))-1; //for calculation width and height of cells
         var path = '/startgame/'+ share_data.players+'/'+share_data.selected_difficulty_level+'/'+ share_data.selected_element+'/';
             $location.path(path);

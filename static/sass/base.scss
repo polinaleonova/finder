@@ -6,6 +6,7 @@ $color-font-base: #944613;
 $color-font-hover: #592B08;
 $base-background:url("../img/back_no_parallax.jpg");
 $dw-background:url("../img/plate.gif") no-repeat;
+$main_cursor: url('../img/cursor_arr.png'), auto;
 @mixin font-base($size) {
   font: $size $font-base-family;
 }
@@ -21,6 +22,15 @@ body{
 }
 .base_container{
   margin: auto;
+}
+html{
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: $main_cursor;
+}
+a{
+  cursor: $main_cursor;
 }
 .font-game{
   color: $color-font-base;
@@ -299,13 +309,13 @@ body{
 .player_1{
   text-align: center;
   padding: 0px 20px;
-  width: 30%;
+  width: 20%;
   float: left;
 }
 .player_2{
   padding: 0px 20px;
   float: RIGHT;
-  width: 30%;
+  width: 20%;
   text-align: center;
 }
 .fade{
